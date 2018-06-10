@@ -15,6 +15,7 @@
 
         <link rel="stylesheet" href="../plantilla/css/bootstrap.css" type="text/css"/>
         <link rel="stylesheet" href="../plantilla/css/sifi.css" type="text/css"/>
+        <link rel="stylesheet" href="../plantilla/css/stilos.css" type="text/css"/>
         <link rel="stylesheet" href="../plantilla/css/animate.css" type="text/css"/>
         <link rel="stylesheet" href="../plantilla/css/font-awesome.min.css" type="text/css"/>
         <link rel="stylesheet" href="../plantilla/css/font.css" type="text/css"/>
