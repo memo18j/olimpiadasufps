@@ -91,23 +91,11 @@
                                                     <li >
                                                         <a href="../vieConsultarInfo.jsp" > 
                                                             <i class="fa fa-arrow-circle-o-right"></i>
-                                                            <span>Consultar informacion facultad</span>
+                                                            <span>Delegaciones</span>
                                                         </a>
 
                                                     </li>
-                                                    <li >
-                                                        <a href="../views/RegistrarNovedad.jsp" >                        
-                                                            <i class="fa fa-arrow-circle-o-right"></i>
-                                                            <span>Registrar Novedad</span>
-                                                        </a>
-                                                    </li>
-                                                    <li >
-                                                        <a href="../views/ConsultarNovedad.jsp" > 
-                                                            <i class="fa fa-arrow-circle-o-right"></i>
-                                                            <span>Consultar Novedad</span>
-                                                        </a>
-
-                                                    </li>
+                                                                                                     
                                                 </ul>
                                             </li>
                                             <li >
@@ -119,19 +107,19 @@
                                                         <i class="fa fa-angle-down text"></i>
                                                         <i class="fa fa-angle-up text-active"></i>
                                                     </span>
-                                                    <span>Programas</span>
+                                                    <span>Funcionarios</span>
                                                 </a>
                                                 <ul class="nav lt">
                                                     <li >
-                                                        <a href="../views/RegistrarPrograma.jsp" >           
+                                                        <a href="../views/RegistrarFuncionario.jsp" >           
                                                             <i class="fa fa-arrow-circle-o-right"></i>
-                                                            <span>Registrar Programas</span>
+                                                            <span>Registrar Funcionarios</span>
                                                         </a>
                                                     </li>
                                                     <li >
                                                         <a href="../views/ConsultarProgramas.jsp" > 
                                                             <i class="fa fa-arrow-circle-o-right"></i>
-                                                            <span>Consultar Programas</span>
+                                                            <span>Funcionarios</span>
                                                         </a>
 
                                                     </li>
@@ -146,35 +134,23 @@
                                                         <i class="fa fa-angle-down text"></i>
                                                         <i class="fa fa-angle-up text-active"></i>
                                                     </span>
-                                                    <span>Departamento</span>
+                                                    <span>Deportes</span>
                                                 </a>
                                                 <ul class="nav lt">
                                                     <li >
-                                                        <a href="../views/RegistrarDpto.jsp" >                        
+                                                        <a href="../views/RegistrarDeporte.jsp" >                        
                                                             <i class="fa fa-arrow-circle-o-right"></i>
-                                                            <span>Registrar Informacion Departamentos</span>
+                                                            <span>Registrar Deportes</span>
                                                         </a>
                                                     </li>
                                                     <li >
                                                         <a href="../views/ConsultarDpto.jsp" > 
                                                             <i class="fa fa-arrow-circle-o-right"></i>
-                                                            <span>Consultar Departamentos </span>
+                                                            <span>Deportes </span>
                                                         </a>
 
                                                     </li>
-                                                    <li >
-                                                        <a href="../views/RegistrarDocente.jsp" >                        
-                                                            <i class="fa fa-arrow-circle-o-right"></i>
-                                                            <span>Registrar Docentes</span>
-                                                        </a>
-                                                    </li>
-                                                    <li >
-                                                        <a href="../views/ConsultarDocentes.jsp" > 
-                                                            <i class="fa fa-arrow-circle-o-right"></i>
-                                                            <span>Consultar Docentes</span>
-                                                        </a>
-
-                                                    </li>
+                                                  
                                                 </ul>
                                             </li>
                                             <li >
@@ -186,19 +162,19 @@
                                                         <i class="fa fa-angle-down text"></i>
                                                         <i class="fa fa-angle-up text-active"></i>
                                                     </span>
-                                                    <span>Investigacion</span>
+                                                    <span>Escenarios</span>
                                                 </a>
                                                 <ul class="nav lt">
                                                     <li >
-                                                        <a href="../views/RegistrarInvestigacion.jsp" >                        
+                                                        <a href="../views/RegistrarEscenario.jsp" >                        
                                                             <i class="fa fa-arrow-circle-o-right"></i>
-                                                            <span>Registrar Informacion </span>
+                                                            <span>Registrar Escenario </span>
                                                         </a>
                                                     </li>
                                                     <li >
                                                         <a href="../views/ConsultarInvestigacion.jsp"> 
                                                             <i class="fa fa-arrow-circle-o-right"></i>
-                                                            <span>Consultar Informacion</span>
+                                                            <span>Escenarios</span>
                                                         </a>
 
                                                     </li>
@@ -214,19 +190,25 @@
                                                         <i class="fa fa-angle-down text"></i>
                                                         <i class="fa fa-angle-up text-active"></i>
                                                     </span>
-                                                    <span>Infraestructura</span>
+                                                    <span>Inscripcion</span>
                                                 </a>
                                                 <ul class="nav lt">
                                                     <li >
-                                                        <a href="../views/RegistrarInfraestructura.jsp" >                        
+                                                        <a href="../views/RegistrarInscripcion.jsp" >                        
                                                             <i class="fa fa-arrow-circle-o-right"></i>
-                                                            <span>Registrar Infraestructura </span>
+                                                            <span>Registrar Inscripcion Equipo </span>
+                                                        </a>
+                                                    </li>
+                                                    <li >
+                                                        <a href="../views/RegistrarInscripcionJugador.jsp" >                        
+                                                            <i class="fa fa-arrow-circle-o-right"></i>
+                                                            <span>Registrar Inscripcion Jugador </span>
                                                         </a>
                                                     </li>
                                                     <li >
                                                         <a href="../views/ConsultarInfraestructura.jsp"> 
                                                             <i class="fa fa-arrow-circle-o-right"></i>
-                                                            <span>Consultar Infraestructura</span>
+                                                            <span>Inscripciones</span>
                                                         </a>
                                                     </li>                                                   
                                                 </ul>
@@ -240,19 +222,19 @@
                                                         <i class="fa fa-angle-down text"></i>
                                                         <i class="fa fa-angle-up text-active"></i>
                                                     </span>
-                                                    <span>Extension</span>
+                                                    <span>Programacion</span>
                                                 </a>
                                                 <ul class="nav lt">
                                                     <li>
                                                         <a href="../views/RegistrarExtension.jsp">
                                                             <i class="fa fa-arrow-circle-o-right"></i>
-                                                            <span>Registrar Extension</span>
+                                                            <span>Registrar programacion</span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="../views/ConsultarExtension.jsp">
                                                             <i class="fa fa-arrow-circle-o-right"></i>
-                                                            <span>Consultar Extension</span>
+                                                            <span>Programaciones</span>
                                                         </a>
                                                     </li>
                                                 </ul>
@@ -266,75 +248,25 @@
                                                         <i class="fa fa-angle-down text"></i>
                                                         <i class="fa fa-angle-up text-active"></i>
                                                     </span>
-                                                    <span>Internacionaliazion</span>
+                                                    <span>Partidos</span>
                                                 </a>
                                                 <ul class="nav lt">
                                                     <li>
                                                         <a href="../views/RegistrarInternacionalizacion.jsp">
                                                             <i class="fa fa-arrow-circle-o-right"></i>
-                                                            <span>Registrar Internacionalizacion</span>
+                                                            <span>Registrar Partido</span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="../views/ConsultarInternacionalizacion.jsp">
                                                             <i class="fa fa-arrow-circle-o-right"></i>
-                                                            <span>Consultar Internacionalizacion</span>
+                                                            <span>Partidos</span>
                                                         </a>
                                                     </li>
                                                 </ul>
                                             </li>
-                                            <li >
-                                                <a href="#"  >
-                                                    <i class="fa fa-book">
-                                                        <b class="bg-danger" style="background-color: #aa1916;"></b>
-                                                    </i>
-                                                    <span class="pull-right">
-                                                        <i class="fa fa-angle-down text"></i>
-                                                        <i class="fa fa-angle-up text-active"></i>
-                                                    </span>
-                                                    <span>Graduados</span>
-                                                </a>
-                                                <ul class="nav lt">
-                                                    <li>
-                                                        <a href="../views/RegistrarInformGraduados.jsp">
-                                                            <i class="fa fa-arrow-circle-o-right"></i>
-                                                            <span>Inoformacion Graduados</span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="../views/ConsultarGraduados.jsp">
-                                                            <i class="fa fa-arrow-circle-o-right"></i>
-                                                            <span>Consultar Informacion</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li >
-                                                <a href="#"  >
-                                                    <i class="fa fa-user">
-                                                        <b class="bg-danger" style="background-color: #aa1916;"></b>
-                                                    </i>
-                                                    <span class="pull-right">
-                                                        <i class="fa fa-angle-down text"></i>
-                                                        <i class="fa fa-angle-up text-active"></i>
-                                                    </span>
-                                                    <span>Usuarios</span>
-                                                </a>
-                                                <ul class="nav lt">
-                                                    <li>
-                                                        <a href="../paginas/res_list.jsp">
-                                                            <i class="fa fa-arrow-circle-o-right"></i>
-                                                            <span>Registrar Usuario</span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="../paginas/res_list.jsp">
-                                                            <i class="fa fa-arrow-circle-o-right"></i>
-                                                            <span>Consultar usuarios</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </li>
+                                         
+                                            
                                         </ul>
                                     </nav>
                                     <!-- / nav -->
