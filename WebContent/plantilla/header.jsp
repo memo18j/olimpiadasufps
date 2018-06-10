@@ -79,13 +79,13 @@
                                                         <i class="fa fa-angle-down text"></i>
                                                         <i class="fa fa-angle-up text-active"></i>
                                                     </span>
-                                                    <span>Facultad</span>
+                                                    <span>Delegacion</span>
                                                 </a>
                                                 <ul class="nav lt">
                                                     <li >
-                                                        <a href="ejemplo.jsp" >                        
+                                                        <a href="registrarDelegacion.jsp" >                        
                                                             <i class="fa fa-arrow-circle-o-right"></i>
-                                                            <span>ejemplo</span>
+                                                            <span>Registrar Delegacion</span>
                                                         </a>
                                                     </li>
                                                     <li >

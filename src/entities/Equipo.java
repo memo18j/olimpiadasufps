@@ -18,9 +18,11 @@ public class Equipo implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 
-	private int delegado;
+	private String delegado;
 
 	private String nombre;
+	
+	private String telefono;
 
 	//bi-directional many-to-one association to Funcionario
 	@OneToMany(mappedBy="equipo")
@@ -37,17 +39,19 @@ public class Equipo implements Serializable {
 	public Equipo() {
 	}
 	
-	public Equipo(int delegado,String nombre){
+	public Equipo(String delegado,String nombre,String telefono){
 		super();
 		this.delegado = delegado;
 		this.nombre = nombre;
+		this.telefono=telefono;
 	}
 	
-	public Equipo(int id, int delegado, String nombre){
+	public Equipo(int id, String delegado, String nombre,String telefono){
 		super();
 		this.delegado = delegado;
 		this.id = id;
 		this.nombre = nombre;
+		this.telefono=telefono;
 	}
 
 	public int getId() {
@@ -58,11 +62,11 @@ public class Equipo implements Serializable {
 		this.id = id;
 	}
 
-	public int getDelegado() {
+	public String getDelegado() {
 		return this.delegado;
 	}
 
-	public void setDelegado(int delegado) {
+	public void setDelegado(String delegado) {
 		this.delegado = delegado;
 	}
 
@@ -72,6 +76,14 @@ public class Equipo implements Serializable {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+	
+	public String getTelefono() {
+		return this.telefono;
+	}
+
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
 	}
 
 	public List<Funcionario> getFuncionarios() {
