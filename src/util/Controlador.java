@@ -73,9 +73,9 @@ public class Controlador {
 		
 	}
 	
-    public void registrarEquipo(int delegado,String nombre){
+    public void registrarEquipo(String delegado,String nombre,String telefono){
 		
-	    Equipo d = new Equipo(delegado,nombre);
+	    Equipo d = new Equipo(delegado,nombre,telefono);
 	    GenericDao<Equipo> usDao = new EquipoDao();
 	    usDao.insert(d);
 
@@ -90,8 +90,8 @@ public class Controlador {
 		
 	}
 	
-	public void ActualizarDelegacion(int id,int delegado,String nombre) {
-		Equipo d = new Equipo(id,delegado,nombre);
+	public void ActualizarDelegacion(int id,String delegado,String nombre,String telefono) {
+		Equipo d = new Equipo(id,delegado,nombre,telefono);
 		GenericDao<Equipo> usDao = new EquipoDao();
 		usDao.update(d);
 		
