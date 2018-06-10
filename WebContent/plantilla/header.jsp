@@ -13,12 +13,12 @@
         <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
 
-        <link rel="stylesheet" href="plantilla/css/bootstrap.css" type="text/css"/>
-        <link rel="stylesheet" href="plantilla/css/sifi.css" type="text/css"/>
-        <link rel="stylesheet" href="plantilla/css/animate.css" type="text/css"/>
-        <link rel="stylesheet" href="plantilla/css/font-awesome.min.css" type="text/css"/>
-        <link rel="stylesheet" href="plantilla/css/font.css" type="text/css"/>
-        <link rel="stylesheet" href="plantilla/css/app.css" type="text/css"/>
+        <link rel="stylesheet" href="../plantilla/css/bootstrap.css" type="text/css"/>
+        <link rel="stylesheet" href="../plantilla/css/sifi.css" type="text/css"/>
+        <link rel="stylesheet" href="../plantilla/css/animate.css" type="text/css"/>
+        <link rel="stylesheet" href="../plantilla/css/font-awesome.min.css" type="text/css"/>
+        <link rel="stylesheet" href="../plantilla/css/font.css" type="text/css"/>
+        <link rel="stylesheet" href="../plantilla/css/app.css" type="text/css"/>
         <link href='https://ww2.ufps.edu.co/assets/img/ico/favicon.ico' rel='Shortcut icon'>
         <!--[if lt IE 9]>
           <script src="js/ie/html5shiv.js"></script>
@@ -82,13 +82,13 @@
                                                 </a>
                                                 <ul class="nav lt">
                                                     <li >
-                                                        <a href="../views/RegistrarInfo.jsp" >                        
+                                                        <a href="ejemplo.jsp" >                        
                                                             <i class="fa fa-arrow-circle-o-right"></i>
-                                                            <span>Registrar informacion facultad</span>
+                                                            <span>ejemplo</span>
                                                         </a>
                                                     </li>
                                                     <li >
-                                                        <a href="../views/ConsultarInfo.jsp" > 
+                                                        <a href="../vieConsultarInfo.jsp" > 
                                                             <i class="fa fa-arrow-circle-o-right"></i>
                                                             <span>Consultar informacion facultad</span>
                                                         </a>

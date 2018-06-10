@@ -13,13 +13,13 @@
     
 -->
 
-<script src="plantilla/js/jquery.min.js"></script>
+<script src="../plantilla/js/jquery.min.js"></script>
 <!-- Bootstrap -->
-<script src="plantilla/js/bootstrap.js"></script>
+<script src="../plantilla/js/bootstrap.js"></script>
 <!-- App -->
-<script src="plantilla/js/app.js"></script>
-<script src="plantilla/js/app.plugin.js"></script>
-<script src="plantilla/js/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="../plantilla/js/app.js"></script>
+<script src="../plantilla/js/app.plugin.js"></script>
+<script src="../plantilla/js/slimscroll/jquery.slimscroll.min.js"></script>
 
 </body>
 </html>
