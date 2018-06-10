@@ -43,7 +43,7 @@ public class loginServlet extends HttpServlet {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		System.out.println(username);
-		RequestDispatcher rd = request.getRequestDispatcher("Vistas/index.html");
+		RequestDispatcher rd = request.getRequestDispatcher("views/pepe.jsp");
 		rd.forward(request, response);
 	}
 

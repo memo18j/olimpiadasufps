@@ -3,7 +3,8 @@
     Created on : 16-abr-2016, 11:42:17
     Author     : Javier
 --%>
-
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,12 +13,12 @@
         <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
 
-        <link rel="stylesheet" href="../plantilla/css/bootstrap.css" type="text/css"/>
-        <link rel="stylesheet" href="../plantilla/css/sifi.css" type="text/css"/>
-        <link rel="stylesheet" href="../plantilla/css/animate.css" type="text/css"/>
-        <link rel="stylesheet" href="../plantilla/css/font-awesome.min.css" type="text/css"/>
-        <link rel="stylesheet" href="../plantilla/css/font.css" type="text/css"/>
-        <link rel="stylesheet" href="../plantilla/css/app.css" type="text/css"/>
+        <link rel="stylesheet" href="plantilla/css/bootstrap.css" type="text/css"/>
+        <link rel="stylesheet" href="plantilla/css/sifi.css" type="text/css"/>
+        <link rel="stylesheet" href="plantilla/css/animate.css" type="text/css"/>
+        <link rel="stylesheet" href="plantilla/css/font-awesome.min.css" type="text/css"/>
+        <link rel="stylesheet" href="plantilla/css/font.css" type="text/css"/>
+        <link rel="stylesheet" href="plantilla/css/app.css" type="text/css"/>
         <link href='https://ww2.ufps.edu.co/assets/img/ico/favicon.ico' rel='Shortcut icon'>
         <!--[if lt IE 9]>
           <script src="js/ie/html5shiv.js"></script>
