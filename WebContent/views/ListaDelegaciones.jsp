@@ -8,7 +8,7 @@
 </head>
 
 
-<form action="../DelegacionServlet" class="formulario" method="post">
+<form action="DelegacionServlet" class="formulario" method="get">
  	
  	<h1 class="formulario__titulo">Registrar Delegacion</h1>
 

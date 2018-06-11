@@ -89,7 +89,7 @@
                                                         </a>
                                                     </li>
                                                     <li >
-                                                        <a href="../vieConsultarInfo.jsp" > 
+                                                        <a href="ListaDelegaciones.jsp" > 
                                                             <i class="fa fa-arrow-circle-o-right"></i>
                                                             <span>Delegaciones</span>
                                                         </a>
