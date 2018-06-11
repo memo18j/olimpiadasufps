@@ -17,12 +17,13 @@
 	
 	
 	
-	<select class="form-control" id="sel1">
-        <option>--Seleccione Documento--</option>
-        <option>Cedula de ciudadania</option>
-        <option>Cedula de extranjeria</option>
-        <option>Tarjeta de identidad</option>
-      </select>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+		<jsp:useBean id="cDao" class="modelo.EquipoDao" scope="request"></jsp:useBean>
+		<select class="form-control" id="equipo" name="equipo">
+		  <c:forEach var="equipo" items="${cDao.list()}">
+		<option value="<c:out value="${equipo.id}"/>"><c:out value="${equipo.nombre}"/></option>
+		  </c:forEach>
+		</select>
     
 	
 	<input type="submit" class="formulario__submit" placeholder="Registrar">
