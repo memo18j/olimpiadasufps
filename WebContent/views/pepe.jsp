@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<jsp:include page="../plantilla/header.jsp"/>
+
 
 <div class="row">
 <div class="col-xs-12 col-sm-2"></div>
@@ -64,4 +64,3 @@
 </div>
 <div class="col-xs-12 col-sm-2"></div>
 </div>
-<jsp:include page="../plantilla/footer.jsp"/>

@@ -50,6 +50,7 @@ public class DelegacionServlet extends HttpServlet {
 		String telefono=request.getParameter("telefono");
 		
 		c.registrarEquipo(delegado, nombre, telefono);
+		
 		RequestDispatcher rd=request.getRequestDispatcher("registrarDelegacion.jsp");
 		rd.forward(request, response);
 		

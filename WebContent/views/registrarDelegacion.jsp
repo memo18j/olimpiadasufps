@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<jsp:include page="../plantilla/header.jsp"/>
+
 
 <head>
 <link rel="stylesheet" href="../plantilla/css/estilos.css">
@@ -8,7 +8,7 @@
 </head>
 
 
-<form action="DelegacionServlet" class="formulario" method="post">
+<form action="DelegacionServlet"  method="post" class="formulario">
  	
  	<h1 class="formulario__titulo">Registrar Delegacion</h1>
 
@@ -24,4 +24,3 @@
 </form>
 <script src="../plantilla/js/form.js"></script>
 
-<jsp:include page="../plantilla/footer.jsp"/>
