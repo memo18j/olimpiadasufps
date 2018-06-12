@@ -29,7 +29,7 @@ public class Conexion<T> {
 	
 	public static EntityManager getEm(){
 		if ( em == null ) {
-			EntityManagerFactory emf = Persistence.createEntityManagerFactory("olimpiadas");
+			EntityManagerFactory emf = Persistence.createEntityManagerFactory("olimpiadasufps");
             em = emf.createEntityManager();
         }
 		return em;

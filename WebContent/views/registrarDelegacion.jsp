@@ -8,19 +8,20 @@
 </head>
 
 
-<form action="DelegacionServlet"  method="post" class="formulario">
+<form action="../DelegacionServlet" class="formulario" method="post">
+>>>>>>> 66ca1ec6390e6e0919876451d609f15cd861b436
  	
  	<h1 class="formulario__titulo">Registrar Delegacion</h1>
 
-	<input type="text" class="formulario__input" id="nombre">
-	<label for="" class="formulario__label">Nombre Delegación</label>
-	<input type="text" class="formulario__input" id="delegado">
-	<label for="" class="formulario__label">Nombre Delegado</label>
-	<input type="text" class="formulario__input" id="telefono">
-	<label for="" class="formulario__label">Telefono Delegado</label>
+	<input type="text" class="formulario__input" id="nombre" placeholder="Nombre" name="nombre">
+	
+	<input type="text" class="formulario__input" id="delegado" placeholder="Nombre delegado" name="delegado">
+	
+	<input type="text" class="formulario__input" id="telefono" placeholder="Telefono" name="telefono">
+	
 	<input type="submit" class="formulario__submit">
 
 
 </form>
-<script src="../plantilla/js/form.js"></script>
+
 

@@ -1,6 +1,7 @@
 package util;
 
 import java.sql.Date;
+import java.util.List;
 
 import entities.Deporte;
 import entities.Equipo;
@@ -79,6 +80,13 @@ public class Controlador {
 	    GenericDao<Equipo> usDao = new EquipoDao();
 	    usDao.insert(d);
 
+	}
+    
+    public List<Equipo> ListarEquipo() {
+		GenericDao<Equipo> usDao= new EquipoDao();
+		List<Equipo> u =  usDao.list();
+		return u;
+		
 	}
 	
 	public void eliminarDelegacion(int id) {

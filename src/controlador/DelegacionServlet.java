@@ -33,25 +33,44 @@ public class DelegacionServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		EquipoDao d= new EquipoDao();
+		Equipo eq= new Equipo();
+		Controlador c= new Controlador();
+		
+		String nombre = request.getParameter("nombre");
+		String delegado = request.getParameter("delegado");
+		String telefono=request.getParameter("telefono");
+		System.out.println("nombre"+nombre);
+		System.out.println("delegado"+delegado);
+		c.registrarEquipo(delegado, nombre, telefono);
+		RequestDispatcher rd=request.getRequestDispatcher("registrarDelegacion.jsp");
+		rd.forward(request, response);
+		System.out.println("ENTRO DOGET");
 		response.getWriter().append("Served at: ").append(request.getContextPath());
+	
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
 		EquipoDao d= new EquipoDao();
 		Equipo eq= new Equipo();
 		Controlador c= new Controlador();
+		
 		String nombre = request.getParameter("nombre");
 		String delegado = request.getParameter("delegado");
 		String telefono=request.getParameter("telefono");
-		
+		System.out.println("nombre"+nombre);
+		System.out.println("delegado"+delegado);
 		c.registrarEquipo(delegado, nombre, telefono);
+
 		
 		RequestDispatcher rd=request.getRequestDispatcher("registrarDelegacion.jsp");
+
 		rd.forward(request, response);
 		
 		
