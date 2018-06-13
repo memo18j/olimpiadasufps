@@ -16,9 +16,6 @@
 <link rel="stylesheet" href="css/stilos.css">
 </head>
 <body>
-
-
-
 	<div class="wrapper">
 		<!-- Sidebar Holder -->
 		<nav id="sidebar">
@@ -84,15 +81,12 @@
 					<div class="collapse navbar-collapse"
 						id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav navbar-right">
-							<li><a href="#">Page</a></li>
-							<li><a href="#">Page</a></li>
-							<li><a href="#">Page</a></li>
-							<li><a href="#">Page</a></li>
+							<li><a href="#">Salir</a></li>
 						</ul>
 					</div>
 				</div>
 			</nav>
-
+            <!-- ACA VAN TODOS LOS FORMULARIOS-->
 			<div class="row">
 				<div class="col-xs-12 col-sm-2"></div>
 				<div class="col-xs-12 col-sm-8 " id="border">
@@ -164,6 +158,7 @@
 				</div>
 				<div class="col-xs-12 col-sm-2"></div>
 			</div>
+			 <!-- ACA TERMINAN TODOS LOS FORMULARIOS-->
 			<div class="line"></div>
 		</div>
 	</div>

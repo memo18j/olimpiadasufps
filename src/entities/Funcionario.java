@@ -29,23 +29,20 @@ public class Funcionario implements Serializable {
 	@JoinColumn(name="idequipo")
 	private Equipo equipo;
 
-	//bi-directional many-to-one association to Novedadpartido
-	@OneToMany(mappedBy="funcionario")
-	private List<Novedadpartido> novedadpartidos;
-
 	public Funcionario() {
 	}
-    
-	public Funcionario(int id, String nombre) {
-		super();
-		this.id = id;
-		this.nombre = nombre;
-	}
-	
 	public Funcionario(String nombre) {
 		super();
 		this.nombre = nombre;
 	}
+	
+	public Funcionario(int id,String nombre) {
+		super();
+		this.id = id;
+		this.nombre = nombre;
+	}
+
+
 	public int getId() {
 		return this.id;
 	}
@@ -90,28 +87,6 @@ public class Funcionario implements Serializable {
 
 	public void setEquipo(Equipo equipo) {
 		this.equipo = equipo;
-	}
-
-	public List<Novedadpartido> getNovedadpartidos() {
-		return this.novedadpartidos;
-	}
-
-	public void setNovedadpartidos(List<Novedadpartido> novedadpartidos) {
-		this.novedadpartidos = novedadpartidos;
-	}
-
-	public Novedadpartido addNovedadpartido(Novedadpartido novedadpartido) {
-		getNovedadpartidos().add(novedadpartido);
-		novedadpartido.setFuncionario(this);
-
-		return novedadpartido;
-	}
-
-	public Novedadpartido removeNovedadpartido(Novedadpartido novedadpartido) {
-		getNovedadpartidos().remove(novedadpartido);
-		novedadpartido.setFuncionario(null);
-
-		return novedadpartido;
 	}
 
 }

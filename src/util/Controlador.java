@@ -1,6 +1,8 @@
 package util;
 
 import java.sql.Date;
+
+
 import java.util.List;
 
 import entities.Deporte;
@@ -8,20 +10,18 @@ import entities.Equipo;
 import entities.Escenario;
 import entities.Funcionario;
 import entities.Inscripcion;
-import entities.Novedad;
-import entities.Novedadpartido;
-import entities.Partido;
+
 import entities.Partidoequipo;
+import entities.Usuario;
 import modelo.DeporteDao;
 import modelo.EquipoDao;
 import modelo.EscenarioDao;
 import modelo.FuncionarioDao;
 import modelo.GenericDao;
 import modelo.InscripcionDao;
-import modelo.NovedadDao;
-import modelo.NovedadPartidoDao;
-import modelo.PartidoDao;
+
 import modelo.PartidoEquipoDao;
+import modelo.UsuarioDao;
 
 public class Controlador {
 
@@ -47,6 +47,33 @@ public class Controlador {
 		GenericDao<Deporte> usDao= new DeporteDao();
 		usDao.update(u);
 		
+	}
+	
+	public boolean login(String nombre,String password){
+		System.out.println("juancho");
+		GenericDao<Usuario> usDao= new UsuarioDao();
+		Usuario us= usDao.find(nombre);
+		if(us == null){
+			System.out.println("jua");
+			return false;
+		}
+		
+		else if(us.getNombre().equals(nombre) && us.getContrasena().equals(password)){
+			System.out.println("juan");
+			return true;
+		}else {
+			System.out.println("juanch");
+			return false;
+		}
+		
+		
+	}
+	
+	public Usuario buscarUsuario(String nombre) {
+			
+			GenericDao<Usuario> us= new UsuarioDao();
+			Usuario u = us.find(nombre);
+			return u;
 	}
 	
 	
@@ -163,89 +190,89 @@ public class Controlador {
 		iDao.update(i);
 	}
 	
-	public void registrarPartido(Date fecha){
-		Partido p = new Partido(fecha);
-		GenericDao<Partido> dDao = new PartidoDao();
-		dDao.insert(p);
-	}
+//	public void registrarPartido(Date fecha){
+//		Partido p = new Partido(fecha);
+//		GenericDao<Partido> dDao = new PartidoDao();
+//		dDao.insert(p);
+//	}
+//	
+//	public void eliminarPartido(int id){
+//		GenericDao<Partido> dDao = new PartidoDao();
+//		Partido p = dDao.find(id);
+//		dDao.delete(p);
+//	}
+//	
+//	public void actualizarPartido(int id, Date fecha){
+//		Partido p = new Partido(id,fecha);
+//		GenericDao<Partido> dDao = new PartidoDao();
+//		dDao.update(p);
+//	}
 	
-	public void eliminarPartido(int id){
-		GenericDao<Partido> dDao = new PartidoDao();
-		Partido p = dDao.find(id);
-		dDao.delete(p);
-	}
+//	public void registrarPartidoEquipo(int idpartido, int idequipo){
+//		Partidoequipo pe = new Partidoequipo();
+//		GenericDao<Equipo> dDao = new EquipoDao();
+//		Equipo d = dDao.find(idequipo);
+//		pe.setEquipo(d);
+//		GenericDao<Partido> deDao = new PartidoDao();
+//		Partido de = deDao.find(idpartido);
+//		pe.setPartido(de);
+//		GenericDao<Partidoequipo> iDao = new PartidoEquipoDao();
+//		iDao.insert(pe);
+//	}
+//	
+//	public void eliminarPartidoEquipo(int id){
+//		GenericDao<Partidoequipo> iDao = new PartidoEquipoDao();
+//		Partidoequipo pe = iDao.find(id);
+//		iDao.delete(pe);
+//	}
+//	
+//	public void actualizarPartidoEquipo(int id, int idpartido, int idequipo){
+//		Partidoequipo pe = new Partidoequipo(id);
+//		GenericDao<Equipo> dDao = new EquipoDao();
+//		Equipo d = dDao.find(idequipo);
+//		pe.setEquipo(d);
+//		GenericDao<Partido> deDao = new PartidoDao();
+//		Partido de = deDao.find(idpartido);
+//		pe.setPartido(de);
+//		GenericDao<Partidoequipo> iDao = new PartidoEquipoDao();
+//		iDao.update(pe);
+//	}
 	
-	public void actualizarPartido(int id, Date fecha){
-		Partido p = new Partido(id,fecha);
-		GenericDao<Partido> dDao = new PartidoDao();
-		dDao.update(p);
-	}
-	
-	public void registrarPartidoEquipo(int idpartido, int idequipo){
-		Partidoequipo pe = new Partidoequipo();
-		GenericDao<Equipo> dDao = new EquipoDao();
-		Equipo d = dDao.find(idequipo);
-		pe.setEquipo(d);
-		GenericDao<Partido> deDao = new PartidoDao();
-		Partido de = deDao.find(idpartido);
-		pe.setPartido(de);
-		GenericDao<Partidoequipo> iDao = new PartidoEquipoDao();
-		iDao.insert(pe);
-	}
-	
-	public void eliminarPartidoEquipo(int id){
-		GenericDao<Partidoequipo> iDao = new PartidoEquipoDao();
-		Partidoequipo pe = iDao.find(id);
-		iDao.delete(pe);
-	}
-	
-	public void actualizarPartidoEquipo(int id, int idpartido, int idequipo){
-		Partidoequipo pe = new Partidoequipo(id);
-		GenericDao<Equipo> dDao = new EquipoDao();
-		Equipo d = dDao.find(idequipo);
-		pe.setEquipo(d);
-		GenericDao<Partido> deDao = new PartidoDao();
-		Partido de = deDao.find(idpartido);
-		pe.setPartido(de);
-		GenericDao<Partidoequipo> iDao = new PartidoEquipoDao();
-		iDao.update(pe);
-	}
-	
-	public void registrarNovedadPartido(int idpartido, int idfuncionario, int idnovedad){
-		Novedadpartido pe = new Novedadpartido();
-		GenericDao<Novedad> dDao = new NovedadDao();
-		Novedad d = dDao.find(idnovedad);
-		pe.setNovedad(d);
-		GenericDao<Partidoequipo> deDao = new PartidoEquipoDao();
-		Partidoequipo de = deDao.find(idpartido);
-		pe.setPartidoequipo(de);
-		GenericDao<Funcionario> fDao = new FuncionarioDao();
-		Funcionario f = fDao.find(idfuncionario);
-		pe.setFuncionario(f);
-		GenericDao<Novedadpartido> iDao = new NovedadPartidoDao();
-		iDao.insert(pe);
-	}
-	
-	public void eliminarNovedadPartido(int id){
-		GenericDao<Novedadpartido> iDao = new NovedadPartidoDao();
-		Novedadpartido pe = iDao.find(id);
-		iDao.delete(pe);
-	}
-	
-	public void actualizarNovedadPartido(int id,int idpartido, int idfuncionario, int idnovedad){
-		Novedadpartido pe = new Novedadpartido(id);
-		GenericDao<Novedad> dDao = new NovedadDao();
-		Novedad d = dDao.find(idnovedad);
-		pe.setNovedad(d);
-		GenericDao<Partidoequipo> deDao = new PartidoEquipoDao();
-		Partidoequipo de = deDao.find(idpartido);
-		pe.setPartidoequipo(de);
-		GenericDao<Funcionario> fDao = new FuncionarioDao();
-		Funcionario f = fDao.find(idfuncionario);
-		pe.setFuncionario(f);
-		GenericDao<Novedadpartido> iDao = new NovedadPartidoDao();
-		iDao.update(pe);
-	}
+//	public void registrarNovedadPartido(int idpartido, int idfuncionario, int idnovedad){
+//		Novedadpartido pe = new Novedadpartido();
+//		GenericDao<Novedad> dDao = new NovedadDao();
+//		Novedad d = dDao.find(idnovedad);
+//		pe.setNovedad(d);
+//		GenericDao<Partidoequipo> deDao = new PartidoEquipoDao();
+//		Partidoequipo de = deDao.find(idpartido);
+//		pe.setPartidoequipo(de);
+//		GenericDao<Funcionario> fDao = new FuncionarioDao();
+//		Funcionario f = fDao.find(idfuncionario);
+//		pe.setFuncionario(f);
+//		GenericDao<Novedadpartido> iDao = new NovedadPartidoDao();
+//		iDao.insert(pe);
+//	}
+//	
+//	public void eliminarNovedadPartido(int id){
+//		GenericDao<Novedadpartido> iDao = new NovedadPartidoDao();
+//		Novedadpartido pe = iDao.find(id);
+//		iDao.delete(pe);
+//	}
+//	
+//	public void actualizarNovedadPartido(int id,int idpartido, int idfuncionario, int idnovedad){
+//		Novedadpartido pe = new Novedadpartido(id);
+//		GenericDao<Novedad> dDao = new NovedadDao();
+//		Novedad d = dDao.find(idnovedad);
+//		pe.setNovedad(d);
+//		GenericDao<Partidoequipo> deDao = new PartidoEquipoDao();
+//		Partidoequipo de = deDao.find(idpartido);
+//		pe.setPartidoequipo(de);
+//		GenericDao<Funcionario> fDao = new FuncionarioDao();
+//		Funcionario f = fDao.find(idfuncionario);
+//		pe.setFuncionario(f);
+//		GenericDao<Novedadpartido> iDao = new NovedadPartidoDao();
+//		iDao.update(pe);
+//	}
 	
 //	public void registrarGrupo(String letra, int deporte, int delegacion){
 //		

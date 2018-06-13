@@ -47,7 +47,8 @@ public class DelegacionServlet extends HttpServlet {
 		rd.forward(request, response);
 		System.out.println("ENTRO DOGET");
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-	
+	    
+		
 	}
 
 	/**
@@ -57,22 +58,47 @@ public class DelegacionServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		EquipoDao d= new EquipoDao();
-		Equipo eq= new Equipo();
-		Controlador c= new Controlador();
+//		EquipoDao d= new EquipoDao();
+//		Equipo eq= new Equipo();
+//		Controlador c= new Controlador();
+//		
+//		String nombre = request.getParameter("nombre");
+//		String delegado = request.getParameter("delegado");
+//		String telefono=request.getParameter("telefono");
+//		System.out.println("nombre"+nombre);
+//		System.out.println("delegado"+delegado);
+//		c.registrarEquipo(delegado, nombre, telefono);
+//
+//		
+//		RequestDispatcher rd=request.getRequestDispatcher("registrarDelegacion.jsp");
+//
+//		rd.forward(request, response);
 		
-		String nombre = request.getParameter("nombre");
-		String delegado = request.getParameter("delegado");
-		String telefono=request.getParameter("telefono");
-		System.out.println("nombre"+nombre);
-		System.out.println("delegado"+delegado);
-		c.registrarEquipo(delegado, nombre, telefono);
-
+        int item = Integer.parseInt(request.getParameter("accion"));
 		
-		RequestDispatcher rd=request.getRequestDispatcher("registrarDelegacion.jsp");
-
-		rd.forward(request, response);
-		
+		if(item == 1){
+			Controlador c = new Controlador();
+			String nombre = request.getParameter("nombre");
+			String delegado = request.getParameter("delegado");
+			String telefono=request.getParameter("telefono");
+			c.registrarEquipo(delegado, nombre, telefono);
+			response.sendRedirect("registrarDeporte.jsp");
+		}else if (item == 2){
+			Controlador c = new Controlador();
+			int id = Integer.parseInt(request.getParameter("id"));
+			String nombre = request.getParameter("nombre");
+			String delegado = request.getParameter("delegado");
+			String telefono=request.getParameter("telefono");
+			c.ActualizarDelegacion(id, delegado, nombre, telefono);
+			response.sendRedirect("registrarDeporte.jsp");
+			
+		}else if( item ==3){
+			Controlador c = new Controlador();
+			int id = Integer.parseInt(request.getParameter("id"));
+			c.eliminarDelegacion(id);
+			response.sendRedirect("registrarDeporte.jsp");
+		}
+	
 		
 	}
 

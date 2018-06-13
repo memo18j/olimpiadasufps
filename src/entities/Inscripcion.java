@@ -36,15 +36,16 @@ public class Inscripcion implements Serializable {
 
 	public Inscripcion() {
 	}
-	
-	public Inscripcion(int id, String grupo){
+
+	public Inscripcion(int id, String grupo) {
 		super();
 		this.id = id;
 		this.grupo = grupo;
 	}
-	
-	public Inscripcion(String grupo){
+    
+	public Inscripcion( String grupo) {
 		super();
+		
 		this.grupo = grupo;
 	}
 

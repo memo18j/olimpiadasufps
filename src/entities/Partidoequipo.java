@@ -2,7 +2,7 @@ package entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.util.List;
+import java.util.Date;
 
 
 /**
@@ -18,26 +18,29 @@ public class Partidoequipo implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 
-	//bi-directional many-to-one association to Novedadpartido
-	@OneToMany(mappedBy="partidoequipo")
-	private List<Novedadpartido> novedadpartidos;
+	@Lob
+	private String descripcion;
 
-	//bi-directional many-to-one association to Partido
-	@ManyToOne
-	@JoinColumn(name="idpartido")
-	private Partido partido;
+	@Temporal(TemporalType.DATE)
+	private Date fecha;
+
+	private int idequipob;
+
+	private int marcadorA;
+
+	private int marcadorB;
 
 	//bi-directional many-to-one association to Equipo
 	@ManyToOne
 	@JoinColumn(name="idequipo")
 	private Equipo equipo;
 
+	//bi-directional many-to-one association to Escenario
+	@ManyToOne
+	@JoinColumn(name="escenario")
+	private Escenario escenarioBean;
+
 	public Partidoequipo() {
-	}
-	
-	public Partidoequipo(int id){
-		super();
-		this.id = id;
 	}
 
 	public int getId() {
@@ -48,34 +51,44 @@ public class Partidoequipo implements Serializable {
 		this.id = id;
 	}
 
-	public List<Novedadpartido> getNovedadpartidos() {
-		return this.novedadpartidos;
+	public String getDescripcion() {
+		return this.descripcion;
 	}
 
-	public void setNovedadpartidos(List<Novedadpartido> novedadpartidos) {
-		this.novedadpartidos = novedadpartidos;
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 
-	public Novedadpartido addNovedadpartido(Novedadpartido novedadpartido) {
-		getNovedadpartidos().add(novedadpartido);
-		novedadpartido.setPartidoequipo(this);
-
-		return novedadpartido;
+	public Date getFecha() {
+		return this.fecha;
 	}
 
-	public Novedadpartido removeNovedadpartido(Novedadpartido novedadpartido) {
-		getNovedadpartidos().remove(novedadpartido);
-		novedadpartido.setPartidoequipo(null);
-
-		return novedadpartido;
+	public void setFecha(Date fecha) {
+		this.fecha = fecha;
 	}
 
-	public Partido getPartido() {
-		return this.partido;
+	public int getIdequipob() {
+		return this.idequipob;
 	}
 
-	public void setPartido(Partido partido) {
-		this.partido = partido;
+	public void setIdequipob(int idequipob) {
+		this.idequipob = idequipob;
+	}
+
+	public int getMarcadorA() {
+		return this.marcadorA;
+	}
+
+	public void setMarcadorA(int marcadorA) {
+		this.marcadorA = marcadorA;
+	}
+
+	public int getMarcadorB() {
+		return this.marcadorB;
+	}
+
+	public void setMarcadorB(int marcadorB) {
+		this.marcadorB = marcadorB;
 	}
 
 	public Equipo getEquipo() {
@@ -84,6 +97,14 @@ public class Partidoequipo implements Serializable {
 
 	public void setEquipo(Equipo equipo) {
 		this.equipo = equipo;
+	}
+
+	public Escenario getEscenarioBean() {
+		return this.escenarioBean;
+	}
+
+	public void setEscenarioBean(Escenario escenarioBean) {
+		this.escenarioBean = escenarioBean;
 	}
 
 }

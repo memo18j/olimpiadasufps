@@ -20,20 +20,20 @@ public class Escenario implements Serializable {
 
 	private String nombre;
 
-	//bi-directional many-to-one association to Partido
-	@OneToMany(mappedBy="escenario")
-	private List<Partido> partidos;
+	//bi-directional many-to-one association to Partidoequipo
+	@OneToMany(mappedBy="escenarioBean")
+	private List<Partidoequipo> partidoequipos;
 
 	public Escenario() {
 	}
 	
-	public Escenario(int id, String nombre){
+	public Escenario(int id, String nombre) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 	}
 	
-	public Escenario( String nombre){
+	public Escenario( String nombre) {
 		super();
 		this.nombre = nombre;
 	}
@@ -54,26 +54,26 @@ public class Escenario implements Serializable {
 		this.nombre = nombre;
 	}
 
-	public List<Partido> getPartidos() {
-		return this.partidos;
+	public List<Partidoequipo> getPartidoequipos() {
+		return this.partidoequipos;
 	}
 
-	public void setPartidos(List<Partido> partidos) {
-		this.partidos = partidos;
+	public void setPartidoequipos(List<Partidoequipo> partidoequipos) {
+		this.partidoequipos = partidoequipos;
 	}
 
-	public Partido addPartido(Partido partido) {
-		getPartidos().add(partido);
-		partido.setEscenario(this);
+	public Partidoequipo addPartidoequipo(Partidoequipo partidoequipo) {
+		getPartidoequipos().add(partidoequipo);
+		partidoequipo.setEscenarioBean(this);
 
-		return partido;
+		return partidoequipo;
 	}
 
-	public Partido removePartido(Partido partido) {
-		getPartidos().remove(partido);
-		partido.setEscenario(null);
+	public Partidoequipo removePartidoequipo(Partidoequipo partidoequipo) {
+		getPartidoequipos().remove(partidoequipo);
+		partidoequipo.setEscenarioBean(null);
 
-		return partido;
+		return partidoequipo;
 	}
 
 }

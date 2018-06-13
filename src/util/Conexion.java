@@ -85,5 +85,12 @@ public class Conexion<T> {
 		}
 		
 	}
+	
+	public <E> T login(E nombre, E password){
+		
+		T object = (T)em.createQuery("SELECT c FROM usuario c WHERE c.nombre='"+nombre+"' AND c.contrasena='"+password+"'");
+		
+		return object;
+	}
 }
 

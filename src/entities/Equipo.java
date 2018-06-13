@@ -21,7 +21,7 @@ public class Equipo implements Serializable {
 	private String delegado;
 
 	private String nombre;
-	
+
 	private String telefono;
 
 	//bi-directional many-to-one association to Funcionario
@@ -39,20 +39,21 @@ public class Equipo implements Serializable {
 	public Equipo() {
 	}
 	
-	public Equipo(String delegado,String nombre,String telefono){
+	public Equipo(int id, String delegado, String nombre,String telefono) {
 		super();
+		this.id = id;
 		this.delegado = delegado;
 		this.nombre = nombre;
-		this.telefono=telefono;
+		this.telefono = telefono;
 	}
 	
-	public Equipo(int id, String delegado, String nombre,String telefono){
+	public Equipo( String delegado, String nombre,String telefono) {
 		super();
 		this.delegado = delegado;
-		this.id = id;
 		this.nombre = nombre;
-		this.telefono=telefono;
+		this.telefono = telefono;
 	}
+
 
 	public int getId() {
 		return this.id;
@@ -77,7 +78,7 @@ public class Equipo implements Serializable {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	
+
 	public String getTelefono() {
 		return this.telefono;
 	}
