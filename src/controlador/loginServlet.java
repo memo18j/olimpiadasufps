@@ -58,8 +58,11 @@ public class loginServlet extends HttpServlet {
 			misession.setAttribute("nombre",miUsuario.getNombre());
 			misession.setAttribute("contrasena",miUsuario.getContrasena());
 			
-		RequestDispatcher rd = request.getRequestDispatcher("views/ejemplo.jsp");
-		rd.forward(request, response);
+//		RequestDispatcher rd = request.getRequestDispatcher("views/registrar.jsp");
+//			RequestDispatcher rd = request.getRequestDispatcher("views/registrar.jsp");
+//			response.sendRedirect("home.jsp");
+			response.sendRedirect("views/registrar.jsp");
+//		rd.forward(request, response);
 		} else{
 			System.out.println("false");
 			request.setAttribute("entrar", "falso");

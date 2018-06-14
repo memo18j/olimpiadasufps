@@ -53,6 +53,8 @@ public class Controlador {
 		System.out.println("juancho");
 		GenericDao<Usuario> usDao= new UsuarioDao();
 		Usuario us= usDao.find(nombre);
+		System.out.println(us);
+		System.out.println("1234");
 		if(us == null){
 			System.out.println("jua");
 			return false;

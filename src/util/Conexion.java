@@ -36,7 +36,10 @@ public class Conexion<T> {
 	}
 	
 	public <E> T find(E id){
+		System.out.println("memo234");
+		System.out.println(id);
 		T object = (T) em.find(c, id);
+		System.out.println(object);
 		return object;
 	}
 	

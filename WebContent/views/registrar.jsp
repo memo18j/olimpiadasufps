@@ -12,6 +12,7 @@
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <!-- Our Custom CSS -->
+
 <link rel="stylesheet" href="css/style4.css">
 <link rel="stylesheet" href="css/stilos.css">
 </head>
@@ -54,14 +55,6 @@
 						Contact
 				</a></li>
 			</ul>
-
-			<ul class="list-unstyled CTAs">
-				<li><a
-					href="https://bootstrapious.com/tutorial/files/sidebar.zip"
-					class="download">Download source</a></li>
-				<li><a href="https://bootstrapious.com/p/bootstrap-sidebar"
-					class="article">Back to article</a></li>
-			</ul>
 		</nav>
 
 		<!-- Page Content Holder -->
@@ -73,8 +66,7 @@
 					<div class="navbar-header">
 						<button type="button" id="sidebarCollapse"
 							class="btn btn-info navbar-btn">
-							<i class="glyphicon glyphicon-align-left"></i> <span>Toggle
-								Sidebar</span>
+							<i class="glyphicon glyphicon-align-left"></i> <span></span>
 						</button>
 					</div>
 
@@ -90,7 +82,7 @@
 			<div class="row">
 				<div class="col-xs-12 col-sm-2"></div>
 				<div class="col-xs-12 col-sm-8 " id="border">
-					<h2>Registrar Mensajeros</h2>
+					<h2>Registrar </h2>
 					<form action="">
 						<div class="form-group col-xs-12 col-sm-6">
 							<label for="1nombre">Primer nombre:</label> <input type="text"
@@ -162,10 +154,6 @@
 			<div class="line"></div>
 		</div>
 	</div>
-
-
-
-
 
 	<!-- jQuery CDN -->
 	<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
