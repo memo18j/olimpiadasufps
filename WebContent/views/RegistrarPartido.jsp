@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <html>
 <head>
 <meta charset="utf-8">
@@ -138,23 +138,80 @@
 			<div class="row">
 				<div class="col-xs-12 col-sm-2"></div>
 				<div class="col-xs-12 col-sm-8 " id="border">
-					<h2>Registrar Delegacion</h2>
+					<h2>Registrar Partido</h2>
 					<form action="">
+						
 						<div class="form-group col-xs-12 col-sm-6">
-							<label for="1nombre">Nombre Delegacion:</label> <input type="text"
-								class="form-control" id="1nombre" placeholder="Nombre delegacion"
+							<label for="sel1">Deporte:</label> <select
+								class="form-control" id="sel1">
+								<option>--Seleccione Deporte--</option>
+								<option>A</option>
+								<option>B</option>
+								<option>C</option>
+							</select>
+						</div>
+						
+						<div class="form-group col-xs-12 col-sm-6">
+							<label for="sel1">Grupo:</label> <select
+								class="form-control" id="sel1">
+								<option>--Seleccione Grupo--</option>
+								<option>A</option>
+								<option>B</option>
+								<option>C</option>
+							</select>
+						</div>
+						
+						<div class="form-group col-xs-12 col-sm-6">
+							<label for="sel1">Equipo Local:</label> <select
+								class="form-control" id="sel1">
+								<option>--Seleccione Equipo--</option>
+								<option>A</option>
+								<option>B</option>
+								
+								
+							</select>
+						</div>
+						
+						<div class="form-group col-xs-12 col-sm-6">
+							<label for="sel1">Equipo Visitante:</label> <select
+								class="form-control" id="sel1">
+								<option>--Seleccione Equipo--</option>
+								<option>A</option>
+								<option>B</option>
+								
+								
+							</select>
+						</div>
+						
+							<div class="form-group col-xs-12 col-sm-6">
+							<label for="1nombre">Marcador Local:</label> <input type="text"
+								class="form-control" id="1nombre" placeholder="Marcador Local"
 								name="1nombre">
 						</div>
-						<div class="form-group col-xs-12 col-sm-6">
-							<label for="2nombre">Nombre Delegado:</label> <input type="text"
-								class="form-control" id="2nombre" placeholder="Delegado"
-								name="2nombre">
+						
+							<div class="form-group col-xs-12 col-sm-6">
+							<label for="1nombre">Marcador Visitante:</label> <input type="text"
+								class="form-control" id="1nombre" placeholder="Marcador Visitante"
+								name="1nombre">
 						</div>
+						
 						<div class="form-group col-xs-12 col-sm-6">
-							<label for="1apellido">Telefono:</label> <input
-								type="text" class="form-control" id="1apellido"
-								placeholder="Telefono" name="1apellido">
-						</div>						
+							<label for="sel1">Escenario:</label> <select
+								class="form-control" id="sel1">
+								<option>--Seleccione Escenario--</option>
+								<option>A</option>
+								<option>B</option>
+								
+								
+							</select>
+						</div>
+						
+						<div class="form-group col-xs-12 col-sm-6">
+							<label for="1nombre">Descripcion:</label> <input type="text"
+								class="form-control" id="1nombre" placeholder="Descripcion"
+								name="1nombre">
+						</div>
+					
 						
 						<div class="form-group col-xs-12 col-sm-12">
 							<button type="submit" class="btn btn-success" id="button">Registrar</button>

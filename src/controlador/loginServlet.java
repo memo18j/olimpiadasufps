@@ -47,6 +47,7 @@ public class loginServlet extends HttpServlet {
 		Controlador c = new Controlador();
 		String nombre = request.getParameter("username");
 		String password = request.getParameter("password");
+
 		System.out.println(nombre);
 		boolean exito = c.login(nombre, password);
 		
@@ -70,6 +71,7 @@ public class loginServlet extends HttpServlet {
 			rd.forward(request, response);
 		    
 		}
+
 	}
 
 }
