@@ -100,13 +100,7 @@
 				
 				
 			</ul>
-			<ul class="list-unstyled CTAs">
-				<li><a
-					href="https://bootstrapious.com/tutorial/files/sidebar.zip"
-					class="download">Download source</a></li>
-				<li><a href="https://bootstrapious.com/p/bootstrap-sidebar"
-					class="article">Back to article</a></li>
-			</ul>
+			
 		</nav>
 
 		<!-- Page Content Holder -->
@@ -118,20 +112,11 @@
 					<div class="navbar-header">
 						<button type="button" id="sidebarCollapse"
 							class="btn btn-info navbar-btn">
-							<i class="glyphicon glyphicon-align-left"></i> <span>Toggle
-								Sidebar</span>
+							<i class="glyphicon glyphicon-align-left"></i> <span>Menu</span>
 						</button>
 					</div>
 
-					<div class="collapse navbar-collapse"
-						id="bs-example-navbar-collapse-1">
-						<ul class="nav navbar-nav navbar-right">
-							<li><a href="#">Page</a></li>
-							<li><a href="#">Page</a></li>
-							<li><a href="#">Page</a></li>
-							<li><a href="#">Page</a></li>
-						</ul>
-					</div>
+					
 				</div>
 			</nav>
 
@@ -175,6 +160,12 @@
 			});
 		});
 	</script>
+	<style type="text/css">
+
+.row{
+width: 60em;
+}
+</style>
 </body>
 </html>
 
