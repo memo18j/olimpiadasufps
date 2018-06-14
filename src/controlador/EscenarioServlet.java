@@ -1,6 +1,8 @@
 package controlador;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -43,19 +45,22 @@ public class EscenarioServlet extends HttpServlet {
 			Controlador c = new Controlador();
 			String nombre = request.getParameter("nombre");
 			c.registrarEscenario(nombre);
-			response.sendRedirect("registrarDeporte.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("views/registrar.jsp");
+        	rd.forward(request, response);
 		}else if (item == 2){
 			Controlador c = new Controlador();
 			int id = Integer.parseInt(request.getParameter("id"));
 			String nombre = request.getParameter("nombre");
 			c.ActualizarEscenario(id, nombre);
-			response.sendRedirect("registrarDeporte.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("views/registrar.jsp");
+        	rd.forward(request, response);
 			
 		}else if( item ==3){
 			Controlador c = new Controlador();
 			int id = Integer.parseInt(request.getParameter("id"));
 			c.eliminarEscenario(id);
-			response.sendRedirect("registrarDeporte.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("views/registrar.jsp");
+        	rd.forward(request, response);
 		}
 	}
 

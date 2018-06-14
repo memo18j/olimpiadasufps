@@ -13,8 +13,9 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <!-- Our Custom CSS -->
 
-<link rel="stylesheet" href="css/style4.css">
-<link rel="stylesheet" href="css/stilos.css">
+<link rel="stylesheet" href="views/css/style4.css">
+<link rel="stylesheet" href="views/css/stilos.css">
+
 </head>
 <body>
 	<div class="wrapper">
@@ -31,7 +32,7 @@
 						class="glyphicon glyphicon-home"></i> Delegacion
 				</a>
 					<ul class="collapse list-unstyled" id="homeSubmenu">
-						<li><a href="registrarDelegacion.jsp">Registrar Delegacion</a></li>
+						<li><a href="views/registrarDelegacion.jsp">Registrar Delegacion</a></li>
 						<li><a href="#">Delegaciones</a></li>
 						
 					</ul></li>
@@ -40,7 +41,7 @@
 						<i class="glyphicon glyphicon-duplicate"></i> Funcionario
 				</a>
 					<ul class="collapse list-unstyled" id="pageSubmenu">
-						<li><a href="RegistrarFuncionario.jsp">Registrar Funcionario</a></li>
+						<li><a href="views/RegistrarFuncionario.jsp">Registrar Funcionario</a></li>
 						<li><a href="#">Funcionarios</a></li>
 						
 					</ul></li>
@@ -49,7 +50,7 @@
 						<i class="glyphicon glyphicon-duplicate"></i> Deporte
 				</a>
 					<ul class="collapse list-unstyled" id="registerSubmenu">
-						<li><a href="RegistrarDeporte.jsp">Registrar Deporte</a></li>
+						<li><a href="views/RegistrarDeporte.jsp">Registrar Deporte</a></li>
 						<li><a href="#">Deportes</a></li>
 						
 					</ul></li>
@@ -58,7 +59,7 @@
 						<i class="glyphicon glyphicon-duplicate"></i> Escenario
 				</a>
 					<ul class="collapse list-unstyled" id="escenarioSubmenu">
-						<li><a href="RegistrarEscenario.jsp">Registrar Escenario</a></li>
+						<li><a href="views/RegistrarEscenario.jsp">Registrar Escenario</a></li>
 						<li><a href="#">Escenarios</a></li>
 						
 					</ul></li>
@@ -67,8 +68,8 @@
 						<i class="glyphicon glyphicon-duplicate"></i> Inscripcion
 				</a>
 					<ul class="collapse list-unstyled" id="inscripcionSubmenu">
-						<li><a href="RegistrarInscripcion.jsp">Inscripcion Equipo</a></li>
-						<li><a href="RegistrarInscripcionJugador.jsp">Inscripcion Jugador</a></li>
+						<li><a href="views/RegistrarInscripcion.jsp">Inscripcion Equipo</a></li>
+						<li><a href="views/RegistrarInscripcionJugador.jsp">Inscripcion Jugador</a></li>
 						<li><a href="#">Equipos Inscritos </a></li>
 						<li><a href="#">Jugadores Inscritos</a></li>
 						
@@ -88,7 +89,7 @@
 						<i class="glyphicon glyphicon-duplicate"></i> Partido
 				</a>
 					<ul class="collapse list-unstyled" id="partidoSubmenu">
-						<li><a href="RegistrarPartido.jsp">Registrar Partido</a></li>
+						<li><a href="views/RegistrarPartido.jsp">Registrar Partido</a></li>
 						<li><a href="#">Partidos</a></li>
 						
 					</ul></li>

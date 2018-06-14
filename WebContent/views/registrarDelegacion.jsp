@@ -16,9 +16,6 @@
 <link rel="stylesheet" href="css/stilos.css">
 </head>
 <body>
-
-
-
 	<div class="wrapper">
 		<!-- Sidebar Holder -->
 		<nav id="sidebar">
@@ -139,21 +136,22 @@
 				<div class="col-xs-12 col-sm-2"></div>
 				<div class="col-xs-12 col-sm-8 " id="border">
 					<h2>Registrar Delegacion</h2>
-					<form action="">
+					<form action="../DelegacionServlet" method="post">
+					<input type="hidden" name="accion" value="1">
 						<div class="form-group col-xs-12 col-sm-6">
 							<label for="1nombre">Nombre Delegacion:</label> <input type="text"
-								class="form-control" id="1nombre" placeholder="Nombre delegacion"
-								name="1nombre">
+								class="form-control" id="nombre" placeholder="Nombre delegacion"
+								name="nombre">
 						</div>
 						<div class="form-group col-xs-12 col-sm-6">
 							<label for="2nombre">Nombre Delegado:</label> <input type="text"
-								class="form-control" id="2nombre" placeholder="Delegado"
-								name="2nombre">
+								class="form-control" id="delegado" placeholder="Delegado"
+								name="delegado">
 						</div>
 						<div class="form-group col-xs-12 col-sm-6">
 							<label for="1apellido">Telefono:</label> <input
-								type="text" class="form-control" id="1apellido"
-								placeholder="Telefono" name="1apellido">
+								type="text" class="form-control" id="telefono"
+								placeholder="Telefono" name="telefono">
 						</div>						
 						
 						<div class="form-group col-xs-12 col-sm-12">

@@ -140,11 +140,12 @@
 				<div class="col-xs-12 col-sm-2"></div>
 				<div class="col-xs-12 col-sm-8 " id="border">
 					<h2>Registrar  Escenario</h2>
-					<form action="">
+					<form action="../EscenarioServlet" method="post">
+					<input type="hidden" name="accion" value="1">
 						<div class="form-group col-xs-12 col-sm-6">
 							<label for="1nombre">Nombre Escenario:</label> <input type="text"
-								class="form-control" id="1nombre" placeholder="Nombre Escenario"
-								name="1nombre">
+								class="form-control" id="nombre" placeholder="Nombre Escenario"
+								name="nombre" >
 						</div>
 						
 						

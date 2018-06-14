@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <html>
 <head>
 <meta charset="utf-8">
@@ -27,77 +27,86 @@
 				<strong>OU</strong>
 			</div>
 
-				<ul class="list-unstyled components">
+			<ul class="list-unstyled components">
 				<li class="active"><a href="#homeSubmenu"
 					data-toggle="collapse" aria-expanded="false"> <i
 						class="glyphicon glyphicon-home"></i> Delegacion
 				</a>
 					<ul class="collapse list-unstyled" id="homeSubmenu">
-						<li><a href="registrarDelegacion.jsp">Registrar Delegacion</a></li>
+						<li><a href="registrarDelegacion.jsp">Registrar
+								Delegacion</a></li>
 						<li><a href="#">Delegaciones</a></li>
-						
+
 					</ul></li>
-					
-				<li> <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">
-						<i class="glyphicon glyphicon-duplicate"></i> Funcionario
+
+				<li><a href="#pageSubmenu" data-toggle="collapse"
+					aria-expanded="false"> <i class="glyphicon glyphicon-duplicate"></i>
+						Funcionario
 				</a>
 					<ul class="collapse list-unstyled" id="pageSubmenu">
-						<li><a href="RegistrarFuncionario.jsp">Registrar Funcionario</a></li>
+						<li><a href="RegistrarFuncionario.jsp">Registrar
+								Funcionario</a></li>
 						<li><a href="#">Funcionarios</a></li>
-						
+
 					</ul></li>
-					
-					<li> <a href="#registerSubmenu" data-toggle="collapse" aria-expanded="false">
-						<i class="glyphicon glyphicon-duplicate"></i> Deporte
+
+				<li><a href="#registerSubmenu" data-toggle="collapse"
+					aria-expanded="false"> <i class="glyphicon glyphicon-duplicate"></i>
+						Deporte
 				</a>
 					<ul class="collapse list-unstyled" id="registerSubmenu">
 						<li><a href="RegistrarDeporte.jsp">Registrar Deporte</a></li>
 						<li><a href="#">Deportes</a></li>
-						
+
 					</ul></li>
-					
-					<li> <a href="#escenarioSubmenu" data-toggle="collapse" aria-expanded="false">
-						<i class="glyphicon glyphicon-duplicate"></i> Escenario
+
+				<li><a href="#escenarioSubmenu" data-toggle="collapse"
+					aria-expanded="false"> <i class="glyphicon glyphicon-duplicate"></i>
+						Escenario
 				</a>
 					<ul class="collapse list-unstyled" id="escenarioSubmenu">
 						<li><a href="RegistrarEscenario.jsp">Registrar Escenario</a></li>
 						<li><a href="#">Escenarios</a></li>
-						
+
 					</ul></li>
-					
-					<li> <a href="#inscripcionSubmenu" data-toggle="collapse" aria-expanded="false">
-						<i class="glyphicon glyphicon-duplicate"></i> Inscripcion
+
+				<li><a href="#inscripcionSubmenu" data-toggle="collapse"
+					aria-expanded="false"> <i class="glyphicon glyphicon-duplicate"></i>
+						Inscripcion
 				</a>
 					<ul class="collapse list-unstyled" id="inscripcionSubmenu">
 						<li><a href="RegistrarInscripcion.jsp">Inscripcion Equipo</a></li>
-						<li><a href="RegistrarInscripcionJugador.jsp">Inscripcion Jugador</a></li>
+						<li><a href="RegistrarInscripcionJugador.jsp">Inscripcion
+								Jugador</a></li>
 						<li><a href="#">Equipos Inscritos </a></li>
 						<li><a href="#">Jugadores Inscritos</a></li>
-						
+
 					</ul></li>
-					
-					<li> <a href="#programacionSubmenu" data-toggle="collapse" aria-expanded="false">
-						<i class="glyphicon glyphicon-duplicate"></i> Programacion
+
+				<li><a href="#programacionSubmenu" data-toggle="collapse"
+					aria-expanded="false"> <i class="glyphicon glyphicon-duplicate"></i>
+						Programacion
 				</a>
 					<ul class="collapse list-unstyled" id="programacionSubmenu">
 						<li><a href="#">Registrar Programacion</a></li>
 						<li><a href="#">Programaciones</a></li>
-						
+
 					</ul></li>
-					
-					
-					<li> <a href="#partidoSubmenu" data-toggle="collapse" aria-expanded="false">
-						<i class="glyphicon glyphicon-duplicate"></i> Partido
+
+
+				<li><a href="#partidoSubmenu" data-toggle="collapse"
+					aria-expanded="false"> <i class="glyphicon glyphicon-duplicate"></i>
+						Partido
 				</a>
 					<ul class="collapse list-unstyled" id="partidoSubmenu">
 						<li><a href="RegistrarPartido.jsp">Registrar Partido</a></li>
 						<li><a href="#">Partidos</a></li>
-						
+
 					</ul></li>
-					
-					
-				
-				
+
+
+
+
 			</ul>
 
 			<ul class="list-unstyled CTAs">
@@ -141,18 +150,20 @@
 					<h2>Registrar Funcionario</h2>
 					<form action="">
 						<div class="form-group col-xs-12 col-sm-6">
-							<label for="1nombre">Nombre Funcionario:</label> <input type="text"
-								class="form-control" id="1nombre" placeholder="Nombre funcionario"
-								name="1nombre">
+							<label for="1nombre">Nombre Funcionario:</label> <input
+								type="text" class="form-control" id="1nombre"
+								placeholder="Nombre funcionario" name="1nombre">
 						</div>
-						
+
 						<div class="form-group col-xs-12 col-sm-6">
-							<label for="sel1">Delegacion:</label> <select
-								class="form-control" id="sel1">
-								<option>--Seleccione Documento--</option>
-								<option>Cedula de ciudadania</option>
-								<option>Cedula de extranjeria</option>
-								<option>Tarjeta de identidad</option>
+							<label for="nombre">Equipo </label>
+							<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+							<jsp:useBean id="cDao" class="modelo.EquipoDao" scope="request"></jsp:useBean>
+							<select class="form-control" id="equipo" name="equipo">
+								<c:forEach var="equipo" items="${cDao.list()}">
+									<option value="<c:out value="${equipo.id}"/>"><c:out
+											value="${equipo.nombre}" /></option>
+								</c:forEach>
 							</select>
 						</div>
 						<div class="form-group col-xs-12 col-sm-12">

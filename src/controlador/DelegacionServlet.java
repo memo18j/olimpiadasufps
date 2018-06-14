@@ -81,8 +81,11 @@ public class DelegacionServlet extends HttpServlet {
 			String nombre = request.getParameter("nombre");
 			String delegado = request.getParameter("delegado");
 			String telefono=request.getParameter("telefono");
+			System.out.println(telefono + "-" + nombre + "-"+ delegado);
 			c.registrarEquipo(delegado, nombre, telefono);
-			response.sendRedirect("registrarDeporte.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("views/registrar.jsp");
+        	rd.forward(request, response);
+//         	response.sendRedirect("views/registrar.jsp");
 		}else if (item == 2){
 			Controlador c = new Controlador();
 			int id = Integer.parseInt(request.getParameter("id"));
@@ -90,7 +93,8 @@ public class DelegacionServlet extends HttpServlet {
 			String delegado = request.getParameter("delegado");
 			String telefono=request.getParameter("telefono");
 			c.ActualizarDelegacion(id, delegado, nombre, telefono);
-			response.sendRedirect("registrarDeporte.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("views/registrar.jsp");
+        	rd.forward(request, response);
 			
 		}else if( item ==3){
 			Controlador c = new Controlador();
