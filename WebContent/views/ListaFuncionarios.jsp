@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%>
 <html>
 <head>
 <meta charset="utf-8">
@@ -27,7 +27,7 @@
 				<strong>OU</strong>
 			</div>
 
-			<ul class="list-unstyled components">
+						<ul class="list-unstyled components">
 				<li class="active"><a href="#homeSubmenu"
 					data-toggle="collapse" aria-expanded="false"> <i
 						class="glyphicon glyphicon-home"></i> Delegacion
@@ -99,7 +99,6 @@
 				
 				
 			</ul>
-
 			
 		</nav>
 
@@ -129,78 +128,49 @@
 				</div>
 			</nav>
 
-			<div class="row">
-				<div class="col-xs-12 col-sm-2"></div>
-				<div class="col-xs-12 col-sm-8 " id="border">
-					<h2>Registrar Mensajeros</h2>
-					<form action="">
-						<div class="form-group col-xs-12 col-sm-6">
-							<label for="1nombre">Primer nombre:</label> <input type="text"
-								class="form-control" id="1nombre" placeholder="Primer nombre"
-								name="1nombre">
-						</div>
-						<div class="form-group col-xs-12 col-sm-6">
-							<label for="2nombre">Segundo nombre:</label> <input type="text"
-								class="form-control" id="2nombre" placeholder="segundo nombre"
-								name="2nombre">
-						</div>
-						<div class="form-group col-xs-12 col-sm-6">
-							<label for="1apellido">Primer apellido:</label> <input
-								type="text" class="form-control" id="1apellido"
-								placeholder="primer apellido" name="1apellido">
-						</div>
-						<div class="form-group col-xs-12 col-sm-6">
-							<label for="2apellido">Segundo apellido:</label> <input
-								type="text" class="form-control" id="2apellido"
-								placeholder="segundo apellido" name="2apellido">
-						</div>
-						<div class="form-group col-xs-12 col-sm-6">
-							<label for="sel1">Tipo documento:</label> <select
-								class="form-control" id="sel1">
-								<option>--Seleccione Documento--</option>
-								<option>Cedula de ciudadania</option>
-								<option>Cedula de extranjeria</option>
-								<option>Tarjeta de identidad</option>
-							</select>
-						</div>
-						<div class="form-group col-xs-12 col-sm-6">
-							<label for="documento">Numero documento:</label> <input
-								type="text" class="form-control" id="documento"
-								placeholder="numero documento" name="documento">
-						</div>
-						<div class="form-group col-xs-12 col-sm-6">
-							<h5>
-								<label>Sexo:</label>
-							</h5>
-							<label class="radio-inline"> <input type="radio"
-								name="radiomasculino">Masculino
-							</label> <label class="radio-inline"> <input type="radio"
-								name="radiofemenino">Femenino
-							</label>
-						</div>
-						<div class="form-group col-xs-12 col-sm-6">
-							<label for="telefono">telefono:</label> <input type="text"
-								class="form-control" id="telefono" placeholder="telefono"
-								name="telefono">
-						</div>
-						<div class="form-group col-xs-12 col-sm-12">
-							<label for="direccion">Direccion:</label> <input type="text"
-								class="form-control" id="direccion" placeholder="direccion"
-								name="direccion">
-						</div>
-						<div class="form-group col-xs-12 col-sm-12">
-							<label for="email">Email::</label> <input type="email"
-								class="form-control" id="email" placeholder="correo electronico"
-								name="email">
-						</div>
-						<div class="form-group col-xs-12 col-sm-12">
-							<button type="submit" class="btn btn-success" id="button">Registrar</button>
-						</div>
-					</form>
-				</div>
-				<div class="col-xs-12 col-sm-2"></div>
-			</div>
-			<div class="line"></div>
+
+
+<div class="row">
+	<div class="col-xs-12 col-sm-1"></div>
+  <div class="col-xs-12 col-sm-10">
+    <h2> Listado de Funcionarios<h2>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	<jsp:useBean id="eDao" class="modelo.FuncionarioDao" scope="request"></jsp:useBean>
+    <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Delegacion</th>
+        <th>Nombre</th>
+      </tr>
+    </thead>
+   <tbody>
+      <c:forEach items="${eDao.list()}" var="item">
+   <tr>
+             <td>
+             <c:out value = "${item.id}"/>
+             </td>
+             <td>
+             <c:out value = "${item.idequipo}"/>
+             </td>
+             <td>
+             <c:out value = "${item.nombre}"/>
+             </td>
+            <td><a class="btn btn-danger" href="EditarEquipoServlet?id=${item.id}"><span class="glyphicon glyphicon-pencil"></span></a></td>
+        	<td><a class="btn btn-danger" href="EliminarEquipoServlet?id=${item.id}"><span class="glyphicon glyphicon-trash"></span></a></td>
+             
+         </tr>
+</c:forEach>
+    </tbody>
+  </table>
+  <div class="form-group col-xs-12 col-sm-12">
+     <button type="submit" class="btn btn-success" id="button" href="../views/registrarDelegacion.jsp">Nuevo Equipo</button>
+  </div>
+  </div>
+  <div class="col-xs-12 col-sm-1"></div>
+</div>
+
+<div class="line"></div>
 		</div>
 	</div>
 
@@ -223,3 +193,5 @@
 	</script>
 </body>
 </html>
+
+

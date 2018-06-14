@@ -27,14 +27,14 @@
 				<strong>OU</strong>
 			</div>
 
-				<ul class="list-unstyled components">
+							<ul class="list-unstyled components">
 				<li class="active"><a href="#homeSubmenu"
 					data-toggle="collapse" aria-expanded="false"> <i
 						class="glyphicon glyphicon-home"></i> Delegacion
 				</a>
 					<ul class="collapse list-unstyled" id="homeSubmenu">
 						<li><a href="registrarDelegacion.jsp">Registrar Delegacion</a></li>
-						<li><a href="#">Delegaciones</a></li>
+						<li><a href="ListaDelegaciones.jsp">Delegaciones</a></li>
 						
 					</ul></li>
 					
@@ -43,7 +43,7 @@
 				</a>
 					<ul class="collapse list-unstyled" id="pageSubmenu">
 						<li><a href="RegistrarFuncionario.jsp">Registrar Funcionario</a></li>
-						<li><a href="#">Funcionarios</a></li>
+						<li><a href="ListaFuncionarios.jsp">Funcionarios</a></li>
 						
 					</ul></li>
 					
@@ -52,7 +52,7 @@
 				</a>
 					<ul class="collapse list-unstyled" id="registerSubmenu">
 						<li><a href="RegistrarDeporte.jsp">Registrar Deporte</a></li>
-						<li><a href="#">Deportes</a></li>
+						<li><a href="ListaDeportes.jsp">Deportes</a></li>
 						
 					</ul></li>
 					
@@ -61,7 +61,7 @@
 				</a>
 					<ul class="collapse list-unstyled" id="escenarioSubmenu">
 						<li><a href="RegistrarEscenario.jsp">Registrar Escenario</a></li>
-						<li><a href="#">Escenarios</a></li>
+						<li><a href="ListaEscenarios.jsp">Escenarios</a></li>
 						
 					</ul></li>
 					
@@ -71,8 +71,8 @@
 					<ul class="collapse list-unstyled" id="inscripcionSubmenu">
 						<li><a href="RegistrarInscripcion.jsp">Inscripcion Equipo</a></li>
 						<li><a href="RegistrarInscripcionJugador.jsp">Inscripcion Jugador</a></li>
-						<li><a href="#">Equipos Inscritos </a></li>
-						<li><a href="#">Jugadores Inscritos</a></li>
+						<li><a href="ListaEquiposInscritos.jsp">Equipos Inscritos </a></li>
+						<li><a href="ListaFuncionariosDeportes.jsp">Jugadores Inscritos</a></li>
 						
 					</ul></li>
 					
@@ -99,7 +99,6 @@
 				
 				
 			</ul>
-
 			<ul class="list-unstyled CTAs">
 				<li><a
 					href="https://bootstrapious.com/tutorial/files/sidebar.zip"
@@ -139,7 +138,7 @@
 				<div class="col-xs-12 col-sm-2"></div>
 				<div class="col-xs-12 col-sm-8 " id="border">
 					<h2>Registrar Delegacion</h2>
-					<form action="">
+					<form action="" >
 						<div class="form-group col-xs-12 col-sm-6">
 							<label for="1nombre">Nombre Delegacion:</label> <input type="text"
 								class="form-control" id="1nombre" placeholder="Nombre delegacion"
