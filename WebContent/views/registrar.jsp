@@ -30,41 +30,77 @@
 			<ul class="list-unstyled components">
 				<li class="active"><a href="#homeSubmenu"
 					data-toggle="collapse" aria-expanded="false"> <i
-						class="glyphicon glyphicon-home"></i> Home
+						class="glyphicon glyphicon-home"></i> Delegacion
 				</a>
 					<ul class="collapse list-unstyled" id="homeSubmenu">
-						<li><a href="#">Home 1</a></li>
-						<li><a href="#">Home 2</a></li>
-						<li><a href="#">Home 3</a></li>
+						<li><a href="registrarDelegacion.jsp">Registrar Delegacion</a></li>
+						<li><a href="#">Delegaciones</a></li>
+						
 					</ul></li>
-				<li><a href="#"> <i class="glyphicon glyphicon-briefcase"></i>
-						About
-				</a> <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">
-						<i class="glyphicon glyphicon-duplicate"></i> Pages
+					
+				<li> <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">
+						<i class="glyphicon glyphicon-duplicate"></i> Funcionario
 				</a>
 					<ul class="collapse list-unstyled" id="pageSubmenu">
-						<li><a href="#">Page 1</a></li>
-						<li><a href="#">Page 2</a></li>
-						<li><a href="#">Page 3</a></li>
+						<li><a href="RegistrarFuncionario.jsp">Registrar Funcionario</a></li>
+						<li><a href="#">Funcionarios</a></li>
+						
 					</ul></li>
-				<li><a href="#"> <i class="glyphicon glyphicon-link"></i>
-						Portfolio
-				</a></li>
-				<li><a href="#"> <i class="glyphicon glyphicon-paperclip"></i>
-						FAQ
-				</a></li>
-				<li><a href="#"> <i class="glyphicon glyphicon-send"></i>
-						Contact
-				</a></li>
+					
+					<li> <a href="#registerSubmenu" data-toggle="collapse" aria-expanded="false">
+						<i class="glyphicon glyphicon-duplicate"></i> Deporte
+				</a>
+					<ul class="collapse list-unstyled" id="registerSubmenu">
+						<li><a href="RegistrarDeporte.jsp">Registrar Deporte</a></li>
+						<li><a href="#">Deportes</a></li>
+						
+					</ul></li>
+					
+					<li> <a href="#escenarioSubmenu" data-toggle="collapse" aria-expanded="false">
+						<i class="glyphicon glyphicon-duplicate"></i> Escenario
+				</a>
+					<ul class="collapse list-unstyled" id="escenarioSubmenu">
+						<li><a href="RegistrarEscenario.jsp">Registrar Escenario</a></li>
+						<li><a href="#">Escenarios</a></li>
+						
+					</ul></li>
+					
+					<li> <a href="#inscripcionSubmenu" data-toggle="collapse" aria-expanded="false">
+						<i class="glyphicon glyphicon-duplicate"></i> Inscripcion
+				</a>
+					<ul class="collapse list-unstyled" id="inscripcionSubmenu">
+						<li><a href="RegistrarInscripcion.jsp">Inscripcion Equipo</a></li>
+						<li><a href="RegistrarInscripcionJugador.jsp">Inscripcion Jugador</a></li>
+						<li><a href="#">Equipos Inscritos </a></li>
+						<li><a href="#">Jugadores Inscritos</a></li>
+						
+					</ul></li>
+					
+					<li> <a href="#programacionSubmenu" data-toggle="collapse" aria-expanded="false">
+						<i class="glyphicon glyphicon-duplicate"></i> Programacion
+				</a>
+					<ul class="collapse list-unstyled" id="programacionSubmenu">
+						<li><a href="#">Registrar Programacion</a></li>
+						<li><a href="#">Programaciones</a></li>
+						
+					</ul></li>
+					
+					
+					<li> <a href="#partidoSubmenu" data-toggle="collapse" aria-expanded="false">
+						<i class="glyphicon glyphicon-duplicate"></i> Partido
+				</a>
+					<ul class="collapse list-unstyled" id="partidoSubmenu">
+						<li><a href="RegistrarPartido.jsp">Registrar Partido</a></li>
+						<li><a href="#">Partidos</a></li>
+						
+					</ul></li>
+					
+					
+				
+				
 			</ul>
 
-			<ul class="list-unstyled CTAs">
-				<li><a
-					href="https://bootstrapious.com/tutorial/files/sidebar.zip"
-					class="download">Download source</a></li>
-				<li><a href="https://bootstrapious.com/p/bootstrap-sidebar"
-					class="article">Back to article</a></li>
-			</ul>
+			
 		</nav>
 
 		<!-- Page Content Holder -->

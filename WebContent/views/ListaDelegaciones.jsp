@@ -46,4 +46,3 @@
 </div>
 
 
-<jsp:include page="../plantilla/footer.jsp"/>

@@ -43,8 +43,9 @@ public class loginServlet extends HttpServlet {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		System.out.println(username);
-		RequestDispatcher rd = request.getRequestDispatcher("views/registrar.jsp");
+RequestDispatcher rd = request.getRequestDispatcher("views/registrar.jsp");
 		rd.forward(request, response);
+//		response.sendRedirect("views/registrar.jsp");
 	}
 
 }
