@@ -83,8 +83,9 @@ public class DelegacionServlet extends HttpServlet {
 			String telefono=request.getParameter("telefono");
 			System.out.println(telefono + "-" + nombre + "-"+ delegado);
 			c.registrarEquipo(delegado, nombre, telefono);
-			RequestDispatcher rd = request.getRequestDispatcher("views/registrar.jsp");
-        	rd.forward(request, response);
+//			RequestDispatcher rd = request.getRequestDispatcher("views/RegistrarFuncionario.jsp");
+//        	rd.forward(request, response);
+        	response.sendRedirect("views/RegistrarFuncionario.jsp");
 //         	response.sendRedirect("views/registrar.jsp");
 		}else if (item == 2){
 			Controlador c = new Controlador();

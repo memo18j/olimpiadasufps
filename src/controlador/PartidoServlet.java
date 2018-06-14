@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServletResponse;
 import util.Controlador;
 
 /**
- * Servlet implementation class InscripcionServlet
+ * Servlet implementation class PartidoServlet
  */
-@WebServlet("/InscripcionServlet")
-public class InscripcionServlet extends HttpServlet {
+@WebServlet("/PartidoServlet")
+public class PartidoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public InscripcionServlet() {
+    public PartidoServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -42,24 +42,16 @@ public class InscripcionServlet extends HttpServlet {
 			if(item == 1){
 				Controlador c = new Controlador();
 				int idequipo = Integer.parseInt(request.getParameter("equipo"));
-				int idequipo2 = Integer.parseInt(request.getParameter("equipo2"));
 				int iddeporte = Integer.parseInt(request.getParameter("deporte"));
-				int idescenario = Integer.parseInt(request.getParameter("escenario"));
 				String grupo = request.getParameter("grupo");
-				String descripcion = request.getParameter("descripcion");
 				c.registrarInscripcion(idequipo, iddeporte, grupo);
 				response.sendRedirect("views/RegistrarInscripcion.jsp");
 			}else if (item == 2){
 				Controlador c = new Controlador();
 				int id = Integer.parseInt(request.getParameter("id"));
 				int idequipo = Integer.parseInt(request.getParameter("equipo"));
-				int idequipo2 = Integer.parseInt(request.getParameter("equipo2"));
 				int iddeporte = Integer.parseInt(request.getParameter("deporte"));
-				int idescenario = Integer.parseInt(request.getParameter("escenario"));
 				String grupo = request.getParameter("grupo");
-				String descripcion = request.getParameter("descripcion");
-				String MarcadorL = request.getParameter("gollocal");
-				String MarcadorV = request.getParameter("golvisitante");
 				c.actualizarInscripcion(id, idequipo, iddeporte, grupo);
 				response.sendRedirect("registrarDeporte.jsp");
 				

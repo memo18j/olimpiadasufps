@@ -18,6 +18,11 @@
 
 </head>
 <body>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:if test="${empty fn:trim(sessionScope.nombre)}">
+<c:redirect url = "../LoginSesionServlet?pepe=memo"/>
+</c:if>
 	<div class="wrapper">
 		<!-- Sidebar Holder -->
 		<nav id="sidebar">
@@ -117,7 +122,7 @@
 					<div class="collapse navbar-collapse"
 						id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav navbar-right">
-							<li><a href="#">Salir</a></li>
+							<li><a href="LoginSesionServlet?sesion">Salir</a></li>
 						</ul>
 					</div>
 				</div>

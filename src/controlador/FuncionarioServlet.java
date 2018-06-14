@@ -45,7 +45,7 @@ public class FuncionarioServlet extends HttpServlet {
 			int idequipo = Integer.parseInt(request.getParameter("equipo"));
 			String nombre = request.getParameter("nombre");
 			c.registrarFuncionario(nombre, idequipo);
-			response.sendRedirect("registrarDeporte.jsp");
+			response.sendRedirect("views/RegistrarDeporte.jsp");
 		}else if (item == 2){
 			Controlador c = new Controlador();
 			int id = Integer.parseInt(request.getParameter("id"));
