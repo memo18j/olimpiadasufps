@@ -52,7 +52,7 @@
 				</a>
 					<ul class="collapse list-unstyled" id="registerSubmenu">
 						<li><a href="RegistrarDeporte.jsp">Registrar Deporte</a></li>
-						<li><a href="#">Deportes</a></li>
+						<li><a href="ListaDeportes.jsp">Deportes</a></li>
 						
 					</ul></li>
 					
@@ -61,7 +61,7 @@
 				</a>
 					<ul class="collapse list-unstyled" id="escenarioSubmenu">
 						<li><a href="RegistrarEscenario.jsp">Registrar Escenario</a></li>
-						<li><a href="#">Escenarios</a></li>
+						<li><a href="ListaEscenarios.jsp">Escenarios</a></li>
 						
 					</ul></li>
 					
