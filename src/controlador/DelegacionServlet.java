@@ -33,21 +33,34 @@ public class DelegacionServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		EquipoDao d= new EquipoDao();
-		Equipo eq= new Equipo();
-		Controlador c= new Controlador();
-		
-		String nombre = request.getParameter("nombre");
-		String delegado = request.getParameter("delegado");
-		String telefono=request.getParameter("telefono");
-		System.out.println("nombre"+nombre);
-		System.out.println("delegado"+delegado);
-		c.registrarEquipo(delegado, nombre, telefono);
-		RequestDispatcher rd=request.getRequestDispatcher("registrarDelegacion.jsp");
-		rd.forward(request, response);
-		System.out.println("ENTRO DOGET");
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	    
+		int item = Integer.parseInt(request.getParameter("accion"));
+		if (item == 2){
+			System.out.println("holaooo");
+			Controlador c = new Controlador();
+			int id = Integer.parseInt(request.getParameter("id"));
+			String nombre = request.getParameter("nombre");
+			String delegado = request.getParameter("delegado");
+			String telefono=request.getParameter("telefono");
+			c.ActualizarDelegacion(id, delegado, nombre, telefono);
+			response.sendRedirect("views/ListaDelegaciones.jsp");
+			
+		}else if( item ==3){
+			System.out.println("hola2");
+			Controlador c = new Controlador();
+			int id = Integer.parseInt(request.getParameter("id"));
+			c.eliminarDelegacion(id);
+			response.sendRedirect("ListaDelegacion.jsp");
+		}else if(item==4){
+			  System.out.println("hola");
+				Controlador c = new Controlador();
+				int id = Integer.parseInt(request.getParameter("id"));
+				EquipoDao d = new EquipoDao();
+				Equipo eq = d.find(id);
+				System.out.println(eq.getNombre());
+				request.setAttribute("equipo",eq);
+				RequestDispatcher rd = request.getRequestDispatcher("views/EditDelegacion.jsp");
+				rd.forward(request, response);
+		}
 		
 	}
 
@@ -87,21 +100,6 @@ public class DelegacionServlet extends HttpServlet {
 //        	rd.forward(request, response);
         	response.sendRedirect("views/RegistrarFuncionario.jsp");
 //         	response.sendRedirect("views/registrar.jsp");
-		}else if (item == 2){
-			Controlador c = new Controlador();
-			int id = Integer.parseInt(request.getParameter("id"));
-			String nombre = request.getParameter("nombre");
-			String delegado = request.getParameter("delegado");
-			String telefono=request.getParameter("telefono");
-			c.ActualizarDelegacion(id, delegado, nombre, telefono);
-			RequestDispatcher rd = request.getRequestDispatcher("views/registrar.jsp");
-        	rd.forward(request, response);
-			
-		}else if( item ==3){
-			Controlador c = new Controlador();
-			int id = Integer.parseInt(request.getParameter("id"));
-			c.eliminarDelegacion(id);
-			response.sendRedirect("registrarDeporte.jsp");
 		}
 	
 		

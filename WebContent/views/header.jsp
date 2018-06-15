@@ -34,7 +34,7 @@
 				</a>
 					<ul class="collapse list-unstyled" id="homeSubmenu">
 						<li><a href="registrarDelegacion.jsp">Registrar Delegacion</a></li>
-						<li><a href="#">Delegaciones</a></li>
+						<li><a href="ListaDelegaciones.jsp">Delegaciones</a></li>
 						
 					</ul></li>
 					
@@ -43,7 +43,7 @@
 				</a>
 					<ul class="collapse list-unstyled" id="pageSubmenu">
 						<li><a href="RegistrarFuncionario.jsp">Registrar Funcionario</a></li>
-						<li><a href="#">Funcionarios</a></li>
+						<li><a href="ListaFuncionarios.jsp">Funcionarios</a></li>
 						
 					</ul></li>
 					
@@ -71,8 +71,8 @@
 					<ul class="collapse list-unstyled" id="inscripcionSubmenu">
 						<li><a href="RegistrarInscripcion.jsp">Inscripcion Equipo</a></li>
 						<li><a href="RegistrarInscripcionJugador.jsp">Inscripcion Jugador</a></li>
-						<li><a href="#">Equipos Inscritos </a></li>
-						<li><a href="#">Jugadores Inscritos</a></li>
+						<li><a href="ListaEquiposInscritos.jsp">Equipos Inscritos </a></li>
+						<li><a href="ListaFuncionariosDeportes.jsp">Jugadores Inscritos</a></li>
 						
 					</ul></li>
 					
@@ -91,13 +91,10 @@
 				</a>
 					<ul class="collapse list-unstyled" id="partidoSubmenu">
 						<li><a href="RegistrarPartido.jsp">Registrar Partido</a></li>
-						<li><a href="#">Partidos</a></li>
+						<li><a href="ListaPartidos.jsp">Partidos</a></li>
 						
 					</ul></li>
 					
-					
-				
-				
 			</ul>
 
 		</nav>
@@ -114,10 +111,11 @@
 							<i class="glyphicon glyphicon-align-left"></i> <span></span>
 						</button>
 					</div>
-
 					<div class="collapse navbar-collapse"
 						id="bs-example-navbar-collapse-1">
+						
 						<ul class="nav navbar-nav navbar-right">
+						  
 							<li><a href="../LoginSesionServlet?sesion">Salir</a></li>
 						</ul>
 					</div>

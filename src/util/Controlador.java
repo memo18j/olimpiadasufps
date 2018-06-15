@@ -3,9 +3,11 @@ package util;
 import java.sql.Date;
 
 
+
 import java.util.List;
 
 import entities.Deporte;
+import entities.Deportefuncionario;
 import entities.Equipo;
 import entities.Escenario;
 import entities.Funcionario;
@@ -14,6 +16,7 @@ import entities.Inscripcion;
 import entities.Partidoequipo;
 import entities.Usuario;
 import modelo.DeporteDao;
+import modelo.DeporteFuncionarioDao;
 import modelo.EquipoDao;
 import modelo.EscenarioDao;
 import modelo.FuncionarioDao;
@@ -197,6 +200,78 @@ public class Controlador {
 		i.setDeporte(de);
 		GenericDao<Inscripcion> iDao = new InscripcionDao();
 		iDao.update(i);
+	}
+	
+	public void registrarDeporteFuncionario(int idequipo,int iddeporte,int idjugador){
+		Deportefuncionario dp = new Deportefuncionario();
+		GenericDao<Equipo> dDao = new EquipoDao();
+		Equipo d = dDao.find(idequipo);
+		dp.setEquipo(d);
+		GenericDao<Deporte> deDao = new DeporteDao();
+		Deporte de = deDao.find(iddeporte);
+		dp.setDeporte(de);
+		GenericDao<Funcionario> fDao = new FuncionarioDao();
+		Funcionario f = fDao.find(idjugador);
+		dp.setFuncionario(f);
+		GenericDao<Deportefuncionario> iDao = new DeporteFuncionarioDao();
+		iDao.insert(dp);
+	}
+	public void eliminarInscripcionJugador(int id){
+		GenericDao<Deportefuncionario> fDao = new DeporteFuncionarioDao();
+		Deportefuncionario f = fDao.find(id);
+		System.out.println(f);
+		fDao.delete(f);
+	}
+	public void actualizarDeporteFuncionario(int id,int idequipo,int iddeporte,int idjugador){
+		Deportefuncionario dp = new Deportefuncionario(id);
+		GenericDao<Equipo> dDao = new EquipoDao();
+		Equipo d = dDao.find(idequipo);
+		dp.setEquipo(d);
+		GenericDao<Deporte> deDao = new DeporteDao();
+		Deporte de = deDao.find(iddeporte);
+		dp.setDeporte(de);
+		GenericDao<Funcionario> fDao = new FuncionarioDao();
+		Funcionario f = fDao.find(idjugador);
+		dp.setFuncionario(f);
+		GenericDao<Deportefuncionario> iDao = new DeporteFuncionarioDao();
+		iDao.update(dp);
+	}
+	
+	public void registrarPartido(String descripcion, String fase, java.util.Date fecha,int idequipol, int equipov, int idescenario){
+		Partidoequipo pe = new Partidoequipo(descripcion, fase, fecha);
+		GenericDao<Equipo> dDao = new EquipoDao();
+		Equipo d = dDao.find(idequipol);
+		pe.setEquipo1(d);
+		GenericDao<Equipo> d2Dao = new EquipoDao();
+		Equipo d2 = dDao.find(equipov);
+		pe.setEquipo2(d2);
+		GenericDao<Escenario> fDao = new EscenarioDao();
+		Escenario f = fDao.find(idescenario);
+		pe.setEscenarioBean(f);
+		GenericDao<Partidoequipo> iDao = new PartidoEquipoDao();
+		iDao.insert(pe);
+		
+	}
+	public void eliminarPartido(int id){
+		GenericDao<Partidoequipo> fDao = new PartidoEquipoDao();
+		Partidoequipo f = fDao.find(id);
+		System.out.println(f);
+		fDao.delete(f);
+	}
+	public void actualizarPartido(int id,String descripcion, String fase, java.util.Date  fecha, int marcadora, int marcadorb,int idequipol, int equipov, int idescenario){
+		Partidoequipo pe = new Partidoequipo(id,descripcion, fase, fecha, marcadora, marcadorb);
+		GenericDao<Equipo> dDao = new EquipoDao();
+		Equipo d = dDao.find(idequipol);
+		pe.setEquipo1(d);
+		GenericDao<Equipo> d2Dao = new EquipoDao();
+		Equipo d2 = dDao.find(equipov);
+		pe.setEquipo2(d2);
+		GenericDao<Escenario> fDao = new EscenarioDao();
+		Escenario f = fDao.find(idescenario);
+		pe.setEscenarioBean(f);
+		GenericDao<Partidoequipo> iDao = new PartidoEquipoDao();
+		iDao.update(pe);
+		
 	}
 	
 //	public void registrarPartido(Date fecha){

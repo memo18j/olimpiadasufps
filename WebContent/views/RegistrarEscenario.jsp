@@ -24,9 +24,5 @@
 		</form>
 	</div>
 	<div class="col-xs-12 col-sm-2"></div>
-	<style type="text/css">
-.row {
-	width: 60em;
-}
-</style>
+</div>
 <jsp:include page="footer.jsp" />

@@ -16,9 +16,6 @@
 <link rel="stylesheet" href="css/stilos.css">
 </head>
 <body>
-
-
-
 	<div class="wrapper">
 		<!-- Sidebar Holder -->
 		<nav id="sidebar">
@@ -141,14 +138,14 @@
              <td>
              <c:out value = "${item.id}"/>
              </td>
-            
-             <td> <td>
-             <c:out value = "${item.id.idequipo}"/>
+             <td>
+             <c:out value = "${item.equipo.nombre}"/>
              </td>
+             <td>
              <c:out value = "${item.nombre}"/>
              </td>
-            <td><a class="btn btn-danger" href="EditarEquipoServlet?id=${item.id}"><span class="glyphicon glyphicon-pencil"></span></a></td>
-        	<td><a class="btn btn-danger" href="EliminarEquipoServlet?id=${item.id}"><span class="glyphicon glyphicon-trash"></span></a></td>
+            <td><a class="btn btn-danger" href="../FuncionarioServlet?id=${item.id}&accion=4"><span class="glyphicon glyphicon-pencil"></span></a></td>
+        	<td><a class="btn btn-danger" href="../FuncionarioServlet?id=${item.id}&accion=3"><span class="glyphicon glyphicon-trash"></span></a></td>
              
          </tr>
 </c:forEach>

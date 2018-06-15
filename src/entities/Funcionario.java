@@ -41,8 +41,6 @@ public class Funcionario implements Serializable {
 		this.id = id;
 		this.nombre = nombre;
 	}
-
-
 	public int getId() {
 		return this.id;
 	}

@@ -68,7 +68,7 @@
 												aria-label="Close">
 												<span aria-hidden="true">&times;</span>
 											</button>
-											<strong>¡Error!</strong> Datos incorrectos.
+											<center><strong>¡Datos invalidos!</strong></center> 
 										</div>
 									</c:if>
 									<div class="form-group">

@@ -20,13 +20,17 @@ public class Deporte implements Serializable {
 
 	private String nombre;
 
+	//bi-directional many-to-one association to Deportefuncionario
+	@OneToMany(mappedBy="deporte")
+	private List<Deportefuncionario> deportefuncionarios;
+
 	//bi-directional many-to-one association to Inscripcion
 	@OneToMany(mappedBy="deporte")
 	private List<Inscripcion> inscripcions;
 
 	public Deporte() {
 	}
-	
+    
 	public Deporte(String nombre){
 		super();
 		
@@ -38,7 +42,6 @@ public class Deporte implements Serializable {
 		this.id = id;
 		this.nombre = nombre;
 	}
-
 	public int getId() {
 		return this.id;
 	}
@@ -53,6 +56,28 @@ public class Deporte implements Serializable {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+
+	public List<Deportefuncionario> getDeportefuncionarios() {
+		return this.deportefuncionarios;
+	}
+
+	public void setDeportefuncionarios(List<Deportefuncionario> deportefuncionarios) {
+		this.deportefuncionarios = deportefuncionarios;
+	}
+
+	public Deportefuncionario addDeportefuncionario(Deportefuncionario deportefuncionario) {
+		getDeportefuncionarios().add(deportefuncionario);
+		deportefuncionario.setDeporte(this);
+
+		return deportefuncionario;
+	}
+
+	public Deportefuncionario removeDeportefuncionario(Deportefuncionario deportefuncionario) {
+		getDeportefuncionarios().remove(deportefuncionario);
+		deportefuncionario.setDeporte(null);
+
+		return deportefuncionario;
 	}
 
 	public List<Inscripcion> getInscripcions() {

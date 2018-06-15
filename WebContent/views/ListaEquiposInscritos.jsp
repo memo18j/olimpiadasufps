@@ -143,16 +143,16 @@
              <c:out value = "${item.id}"/>
              </td>
              <td>
-             <c:out value = "${item.idequipo}"/>
+             <c:out value = "${item.equipo.nombre}"/>
              </td>
              <td>
-             <c:out value = "${item.iddeporte}"/>
+             <c:out value = "${item.deporte.nombre}"/>
              </td>
              <td>
              <c:out value = "${item.grupo}"/>
              </td>
-            <td><a class="btn btn-danger" href="EditarEquipoServlet?id=${item.id}"><span class="glyphicon glyphicon-pencil"></span></a></td>
-        	<td><a class="btn btn-danger" href="EliminarEquipoServlet?id=${item.id}"><span class="glyphicon glyphicon-trash"></span></a></td>
+            <td><a class="btn btn-danger" href="../InscripcionServlet?id=${item.id}&accion=4"><span class="glyphicon glyphicon-pencil"></span></a></td>
+        	<td><a class="btn btn-danger" href="../InscripcionServlet?id=${item.id}&accion=3"><span class="glyphicon glyphicon-trash"></span></a></td>
              
          </tr>
 </c:forEach>

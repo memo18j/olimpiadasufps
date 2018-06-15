@@ -1,12 +1,18 @@
 package controlador;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import entities.Deportefuncionario;
+import entities.Funcionario;
+import modelo.DeporteFuncionarioDao;
+import modelo.FuncionarioDao;
 import util.Controlador;
 
 /**
@@ -29,7 +35,32 @@ public class InscriJugadorServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		int item = Integer.parseInt(request.getParameter("accion"));
+		 if (item == 2){
+			Controlador c = new Controlador();
+			int id = Integer.parseInt(request.getParameter("id"));
+			int idequipo = Integer.parseInt(request.getParameter("equipo"));
+			int iddeporte = Integer.parseInt(request.getParameter("deporte"));
+			int idjugador = Integer.parseInt(request.getParameter("funcionario"));
+//			c.registrarInscripcion(idequipo, iddeporte, grupo);
+			c.actualizarDeporteFuncionario(id, idequipo, iddeporte, idjugador);
+			response.sendRedirect("views/ListaFuncionariosDeportes.jsp");
+			
+		}else if( item ==3){
+			Controlador c = new Controlador();
+			int id = Integer.parseInt(request.getParameter("id"));
+			c.eliminarInscripcionJugador(id);
+			response.sendRedirect("views/ListaFuncionariosDeportes.jsp");
+		}else if(item == 4){
+			 System.out.println("hola");
+			Controlador c = new Controlador();
+			int id = Integer.parseInt(request.getParameter("id"));
+			DeporteFuncionarioDao d = new DeporteFuncionarioDao();
+			Deportefuncionario eq = d.find(id);
+			request.setAttribute("dejugador",eq);
+			RequestDispatcher rd = request.getRequestDispatcher("views/EditDeporteFuncionario.jsp");
+			rd.forward(request, response);
+		}
 	}
 
 	/**
@@ -43,22 +74,10 @@ public class InscriJugadorServlet extends HttpServlet {
 				Controlador c = new Controlador();
 				int idequipo = Integer.parseInt(request.getParameter("equipo"));
 				int iddeporte = Integer.parseInt(request.getParameter("deporte"));
-				int idfuncionario = Integer.parseInt(request.getParameter("funcionario"));
+				int idjugador = Integer.parseInt(request.getParameter("funcionario"));
 //				c.registrarInscripcion(idequipo, iddeporte, grupo);
-				response.sendRedirect("views/RegistrarInscripcion.jsp");
-			}else if (item == 2){
-				Controlador c = new Controlador();
-				int idequipo = Integer.parseInt(request.getParameter("equipo"));
-				int iddeporte = Integer.parseInt(request.getParameter("deporte"));
-				int idfuncionario = Integer.parseInt(request.getParameter("funcionario"));
-//				c.registrarInscripcion(idequipo, iddeporte, grupo);
-				response.sendRedirect("registrarDeporte.jsp");
-				
-			}else if( item ==3){
-				Controlador c = new Controlador();
-				int id = Integer.parseInt(request.getParameter("id"));
-				c.eliminarInscripcion(id);
-				response.sendRedirect("registrarDeporte.jsp");
+				c.registrarDeporteFuncionario(idequipo, iddeporte, idjugador);
+				response.sendRedirect("views/RegistrarInscripcionJugador.jsp");
 			}
 	}
 

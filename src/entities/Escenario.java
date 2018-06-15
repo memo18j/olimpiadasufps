@@ -26,7 +26,6 @@ public class Escenario implements Serializable {
 
 	public Escenario() {
 	}
-	
 	public Escenario(int id, String nombre) {
 		super();
 		this.id = id;
@@ -37,7 +36,6 @@ public class Escenario implements Serializable {
 		super();
 		this.nombre = nombre;
 	}
-
 	public int getId() {
 		return this.id;
 	}

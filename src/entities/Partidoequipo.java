@@ -21,10 +21,10 @@ public class Partidoequipo implements Serializable {
 	@Lob
 	private String descripcion;
 
+	private String fase;
+
 	@Temporal(TemporalType.DATE)
 	private Date fecha;
-
-	private int idequipob;
 
 	private int marcadorA;
 
@@ -33,15 +33,39 @@ public class Partidoequipo implements Serializable {
 	//bi-directional many-to-one association to Equipo
 	@ManyToOne
 	@JoinColumn(name="idequipo")
-	private Equipo equipo;
+	private Equipo equipo1;
 
 	//bi-directional many-to-one association to Escenario
 	@ManyToOne
 	@JoinColumn(name="escenario")
 	private Escenario escenarioBean;
 
+	//bi-directional many-to-one association to Equipo
+	@ManyToOne
+	@JoinColumn(name="idequipob")
+	private Equipo equipo2;
+
 	public Partidoequipo() {
 	}
+	
+	public Partidoequipo(int id,String descripcion, String fase, Date fecha, int marcadora, int marcadorb) {
+		super();
+		this.id = id;
+		this.descripcion = descripcion;
+		this.fase = fase;
+		this.fecha = fecha;
+		this.marcadorA = marcadora;
+		this.marcadorB = marcadorb;
+	}
+	
+	
+	public Partidoequipo(String descripcion, String fase, Date fecha) {
+		super();
+		this.descripcion = descripcion;
+		this.fase = fase;
+		this.fecha = fecha;
+	}
+	
 
 	public int getId() {
 		return this.id;
@@ -59,20 +83,20 @@ public class Partidoequipo implements Serializable {
 		this.descripcion = descripcion;
 	}
 
+	public String getFase() {
+		return this.fase;
+	}
+
+	public void setFase(String fase) {
+		this.fase = fase;
+	}
+
 	public Date getFecha() {
 		return this.fecha;
 	}
 
 	public void setFecha(Date fecha) {
 		this.fecha = fecha;
-	}
-
-	public int getIdequipob() {
-		return this.idequipob;
-	}
-
-	public void setIdequipob(int idequipob) {
-		this.idequipob = idequipob;
 	}
 
 	public int getMarcadorA() {
@@ -91,12 +115,12 @@ public class Partidoequipo implements Serializable {
 		this.marcadorB = marcadorB;
 	}
 
-	public Equipo getEquipo() {
-		return this.equipo;
+	public Equipo getEquipo1() {
+		return this.equipo1;
 	}
 
-	public void setEquipo(Equipo equipo) {
-		this.equipo = equipo;
+	public void setEquipo1(Equipo equipo1) {
+		this.equipo1 = equipo1;
 	}
 
 	public Escenario getEscenarioBean() {
@@ -105,6 +129,14 @@ public class Partidoequipo implements Serializable {
 
 	public void setEscenarioBean(Escenario escenarioBean) {
 		this.escenarioBean = escenarioBean;
+	}
+
+	public Equipo getEquipo2() {
+		return this.equipo2;
+	}
+
+	public void setEquipo2(Equipo equipo2) {
+		this.equipo2 = equipo2;
 	}
 
 }

@@ -1,13 +1,17 @@
 package controlador;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import entities.Equipo;
 import entities.Funcionario;
+import modelo.EquipoDao;
 import modelo.FuncionarioDao;
 import util.Controlador;
 
@@ -31,7 +35,31 @@ public class FuncionarioServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		int item = Integer.parseInt(request.getParameter("accion"));
+		if (item == 2){
+			Controlador c = new Controlador();
+			int id = Integer.parseInt(request.getParameter("id"));
+			int idequipo = Integer.parseInt(request.getParameter("equipo"));
+			String nombre = request.getParameter("nombre");
+			c.actualizarFuncionario(id, idequipo, nombre);
+			response.sendRedirect("views/ListaFuncionarios.jsp");
+			
+		}else if( item ==3){
+			Controlador c = new Controlador();
+			int id = Integer.parseInt(request.getParameter("id"));
+			c.eliminarFuncionario(id);
+			response.sendRedirect("views/ListaFuncionarios.jsp");
+		}else if(item==4){
+			  System.out.println("hola");
+				Controlador c = new Controlador();
+				int id = Integer.parseInt(request.getParameter("id"));
+				FuncionarioDao d = new FuncionarioDao();
+				Funcionario eq = d.find(id);
+				System.out.println(eq.getNombre());
+				request.setAttribute("funcionario",eq);
+				RequestDispatcher rd = request.getRequestDispatcher("views/EditFuncionario.jsp");
+				rd.forward(request, response);
+		}
 	}
 
 	/**
@@ -45,20 +73,7 @@ public class FuncionarioServlet extends HttpServlet {
 			int idequipo = Integer.parseInt(request.getParameter("equipo"));
 			String nombre = request.getParameter("nombre");
 			c.registrarFuncionario(nombre, idequipo);
-			response.sendRedirect("views/RegistrarDeporte.jsp");
-		}else if (item == 2){
-			Controlador c = new Controlador();
-			int id = Integer.parseInt(request.getParameter("id"));
-			int idequipo = Integer.parseInt(request.getParameter("equipo"));
-			String nombre = request.getParameter("nombre");
-			c.actualizarFuncionario(id, idequipo, nombre);
-			response.sendRedirect("registrarDeporte.jsp");
-			
-		}else if( item ==3){
-			Controlador c = new Controlador();
-			int id = Integer.parseInt(request.getParameter("id"));
-			c.eliminarFuncionario(id);
-			response.sendRedirect("registrarDeporte.jsp");
+			response.sendRedirect("views/RegistrarFuncionario.jsp");
 		}
 	}
 

@@ -2,7 +2,6 @@ package entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.util.List;
 
 
 /**
@@ -20,10 +19,6 @@ public class Inscripcion implements Serializable {
 
 	private String grupo;
 
-	//bi-directional many-to-one association to Deportefuncionario
-	@OneToMany(mappedBy="inscripcion")
-	private List<Deportefuncionario> deportefuncionarios;
-
 	//bi-directional many-to-one association to Deporte
 	@ManyToOne
 	@JoinColumn(name="iddeporte")
@@ -36,7 +31,6 @@ public class Inscripcion implements Serializable {
 
 	public Inscripcion() {
 	}
-
 	public Inscripcion(int id, String grupo) {
 		super();
 		this.id = id;
@@ -48,7 +42,6 @@ public class Inscripcion implements Serializable {
 		
 		this.grupo = grupo;
 	}
-
 	public int getId() {
 		return this.id;
 	}
@@ -63,28 +56,6 @@ public class Inscripcion implements Serializable {
 
 	public void setGrupo(String grupo) {
 		this.grupo = grupo;
-	}
-
-	public List<Deportefuncionario> getDeportefuncionarios() {
-		return this.deportefuncionarios;
-	}
-
-	public void setDeportefuncionarios(List<Deportefuncionario> deportefuncionarios) {
-		this.deportefuncionarios = deportefuncionarios;
-	}
-
-	public Deportefuncionario addDeportefuncionario(Deportefuncionario deportefuncionario) {
-		getDeportefuncionarios().add(deportefuncionario);
-		deportefuncionario.setInscripcion(this);
-
-		return deportefuncionario;
-	}
-
-	public Deportefuncionario removeDeportefuncionario(Deportefuncionario deportefuncionario) {
-		getDeportefuncionarios().remove(deportefuncionario);
-		deportefuncionario.setInscripcion(null);
-
-		return deportefuncionario;
 	}
 
 	public Deporte getDeporte() {

@@ -24,6 +24,10 @@ public class Equipo implements Serializable {
 
 	private String telefono;
 
+	//bi-directional many-to-one association to Deportefuncionario
+	@OneToMany(mappedBy="equipo")
+	private List<Deportefuncionario> deportefuncionarios;
+
 	//bi-directional many-to-one association to Funcionario
 	@OneToMany(mappedBy="equipo")
 	private List<Funcionario> funcionarios;
@@ -33,13 +37,18 @@ public class Equipo implements Serializable {
 	private List<Inscripcion> inscripcions;
 
 	//bi-directional many-to-one association to Partidoequipo
-	@OneToMany(mappedBy="equipo")
-	private List<Partidoequipo> partidoequipos;
+	@OneToMany(mappedBy="equipo1")
+	private List<Partidoequipo> partidoequipos1;
+
+	//bi-directional many-to-one association to Partidoequipo
+	@OneToMany(mappedBy="equipo2")
+	private List<Partidoequipo> partidoequipos2;
 
 	public Equipo() {
 	}
-	
-	public Equipo(int id, String delegado, String nombre,String telefono) {
+    
+
+    public Equipo(int id, String delegado, String nombre,String telefono) {
 		super();
 		this.id = id;
 		this.delegado = delegado;
@@ -53,8 +62,7 @@ public class Equipo implements Serializable {
 		this.nombre = nombre;
 		this.telefono = telefono;
 	}
-
-
+	
 	public int getId() {
 		return this.id;
 	}
@@ -85,6 +93,28 @@ public class Equipo implements Serializable {
 
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
+	}
+
+	public List<Deportefuncionario> getDeportefuncionarios() {
+		return this.deportefuncionarios;
+	}
+
+	public void setDeportefuncionarios(List<Deportefuncionario> deportefuncionarios) {
+		this.deportefuncionarios = deportefuncionarios;
+	}
+
+	public Deportefuncionario addDeportefuncionario(Deportefuncionario deportefuncionario) {
+		getDeportefuncionarios().add(deportefuncionario);
+		deportefuncionario.setEquipo(this);
+
+		return deportefuncionario;
+	}
+
+	public Deportefuncionario removeDeportefuncionario(Deportefuncionario deportefuncionario) {
+		getDeportefuncionarios().remove(deportefuncionario);
+		deportefuncionario.setEquipo(null);
+
+		return deportefuncionario;
 	}
 
 	public List<Funcionario> getFuncionarios() {
@@ -131,26 +161,48 @@ public class Equipo implements Serializable {
 		return inscripcion;
 	}
 
-	public List<Partidoequipo> getPartidoequipos() {
-		return this.partidoequipos;
+	public List<Partidoequipo> getPartidoequipos1() {
+		return this.partidoequipos1;
 	}
 
-	public void setPartidoequipos(List<Partidoequipo> partidoequipos) {
-		this.partidoequipos = partidoequipos;
+	public void setPartidoequipos1(List<Partidoequipo> partidoequipos1) {
+		this.partidoequipos1 = partidoequipos1;
 	}
 
-	public Partidoequipo addPartidoequipo(Partidoequipo partidoequipo) {
-		getPartidoequipos().add(partidoequipo);
-		partidoequipo.setEquipo(this);
+	public Partidoequipo addPartidoequipos1(Partidoequipo partidoequipos1) {
+		getPartidoequipos1().add(partidoequipos1);
+		partidoequipos1.setEquipo1(this);
 
-		return partidoequipo;
+		return partidoequipos1;
 	}
 
-	public Partidoequipo removePartidoequipo(Partidoequipo partidoequipo) {
-		getPartidoequipos().remove(partidoequipo);
-		partidoequipo.setEquipo(null);
+	public Partidoequipo removePartidoequipos1(Partidoequipo partidoequipos1) {
+		getPartidoequipos1().remove(partidoequipos1);
+		partidoequipos1.setEquipo1(null);
 
-		return partidoequipo;
+		return partidoequipos1;
+	}
+
+	public List<Partidoequipo> getPartidoequipos2() {
+		return this.partidoequipos2;
+	}
+
+	public void setPartidoequipos2(List<Partidoequipo> partidoequipos2) {
+		this.partidoequipos2 = partidoequipos2;
+	}
+
+	public Partidoequipo addPartidoequipos2(Partidoequipo partidoequipos2) {
+		getPartidoequipos2().add(partidoequipos2);
+		partidoequipos2.setEquipo2(this);
+
+		return partidoequipos2;
+	}
+
+	public Partidoequipo removePartidoequipos2(Partidoequipo partidoequipos2) {
+		getPartidoequipos2().remove(partidoequipos2);
+		partidoequipos2.setEquipo2(null);
+
+		return partidoequipos2;
 	}
 
 }
