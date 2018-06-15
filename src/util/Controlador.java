@@ -117,6 +117,13 @@ public class Controlador {
 		return u;
 		
 	}
+    
+    public List<Equipo> ListarFuncionario() {
+		GenericDao<Equipo> usDao= new EquipoDao();
+		List<Equipo> u =  usDao.list();
+		return u;
+		
+	}
 	
 	public void eliminarDelegacion(int id) {
 		

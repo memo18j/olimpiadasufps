@@ -16,8 +16,6 @@
 					class="form-control" id="nombre" placeholder="Nombre Deporte"
 					name="nombre">
 			</div>
-
-
 			<div class="form-group col-xs-12 col-sm-12">
 				<button type="submit" class="btn btn-success" id="button">Registrar</button>
 			</div>
@@ -25,4 +23,9 @@
 	</div>
 	<div class="col-xs-12 col-sm-2"></div>
 
-<jsp:include page="footer.jsp" />
+	<style type="text/css">
+.row {
+	width: 60em;
+}
+</style>
+	<jsp:include page="footer.jsp" />

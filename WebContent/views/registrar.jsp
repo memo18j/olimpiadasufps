@@ -37,9 +37,9 @@
 						class="glyphicon glyphicon-home"></i> Delegacion
 				</a>
 					<ul class="collapse list-unstyled" id="homeSubmenu">
+
 						<li><a href="views/registrarDelegacion.jsp">Registrar Delegacion</a></li>
-						<li><a href="#">Delegaciones</a></li>
-						
+						<li><a href="views/ListaDelegaciones.jsp">Delegaciones</a></li>
 					</ul></li>
 					
 				<li> <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">
@@ -47,8 +47,7 @@
 				</a>
 					<ul class="collapse list-unstyled" id="pageSubmenu">
 						<li><a href="views/RegistrarFuncionario.jsp">Registrar Funcionario</a></li>
-						<li><a href="#">Funcionarios</a></li>
-						
+						<li><a href="views/ListaFuncionarios.jsp">Funcionarios</a></li>
 					</ul></li>
 					
 					<li> <a href="#registerSubmenu" data-toggle="collapse" aria-expanded="false">
@@ -56,8 +55,7 @@
 				</a>
 					<ul class="collapse list-unstyled" id="registerSubmenu">
 						<li><a href="views/RegistrarDeporte.jsp">Registrar Deporte</a></li>
-						<li><a href="#">Deportes</a></li>
-						
+						<li><a href="views/ListaDeportes.jsp">Deportes</a></li>
 					</ul></li>
 					
 					<li> <a href="#escenarioSubmenu" data-toggle="collapse" aria-expanded="false">
@@ -65,8 +63,7 @@
 				</a>
 					<ul class="collapse list-unstyled" id="escenarioSubmenu">
 						<li><a href="views/RegistrarEscenario.jsp">Registrar Escenario</a></li>
-						<li><a href="#">Escenarios</a></li>
-						
+						<li><a href="views/ListaEscenarios.jsp">Escenarios</a></li>
 					</ul></li>
 					
 					<li> <a href="#inscripcionSubmenu" data-toggle="collapse" aria-expanded="false">
@@ -75,9 +72,8 @@
 					<ul class="collapse list-unstyled" id="inscripcionSubmenu">
 						<li><a href="views/RegistrarInscripcion.jsp">Inscripcion Equipo</a></li>
 						<li><a href="views/RegistrarInscripcionJugador.jsp">Inscripcion Jugador</a></li>
-						<li><a href="#">Equipos Inscritos </a></li>
-						<li><a href="#">Jugadores Inscritos</a></li>
-						
+						<li><a href="views/ListaEquiposInscritos.jsp">Equipos Inscritos </a></li>
+						<li><a href="views/ListaFuncionariosDeportes.jsp">Jugadores Inscritos</a></li>
 					</ul></li>
 					
 					<li> <a href="#programacionSubmenu" data-toggle="collapse" aria-expanded="false">
