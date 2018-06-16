@@ -5,6 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Olimpiadas UFPS</title>
+<!-- Favicon -->
+        <link href='https://ww2.ufps.edu.co/assets/img/ico/favicon.ico' rel='Shortcut icon'>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <link rel="stylesheet" href="css/login.css">
@@ -54,7 +56,7 @@
 
 									<div class="form-group">
 										<div class="row">
-											<div class="col-sm-6 col-sm-offset-3">
+											<div class="col-sm-6 col-sm-offset-3 ">
 												<input type="submit" name="login-submit" id="login-submit"
 													tabindex="4" class="form-control btn btn-login"
 													value="Iniciar sesión">

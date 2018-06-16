@@ -7,7 +7,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 <title>Olimpiadas UFPS</title>
-
+<!-- Favicon -->
+        <link href='https://ww2.ufps.edu.co/assets/img/ico/favicon.ico' rel='Shortcut icon'>
 <!-- Bootstrap CSS CDN -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -25,6 +26,7 @@
 			<div class="sidebar-header">
 				<h3>Olimpiadas UFPS</h3>
 				<strong>OU</strong>
+				<a href="home.jsp"></a>
 			</div>
 
 			<ul class="list-unstyled components">
