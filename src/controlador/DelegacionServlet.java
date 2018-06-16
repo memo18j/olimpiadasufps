@@ -49,7 +49,7 @@ public class DelegacionServlet extends HttpServlet {
 			Controlador c = new Controlador();
 			int id = Integer.parseInt(request.getParameter("id"));
 			c.eliminarDelegacion(id);
-			response.sendRedirect("ListaDelegacion.jsp");
+			response.sendRedirect("views/ListaDelegaciones.jsp");
 		}else if(item==4){
 			  System.out.println("hola");
 				Controlador c = new Controlador();
