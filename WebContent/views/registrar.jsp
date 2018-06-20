@@ -91,16 +91,6 @@
 
 					</ul></li>
 
-				<li><a href="#programacionSubmenu" data-toggle="collapse"
-					aria-expanded="false"> <i class="glyphicon glyphicon-duplicate"></i>
-						Programacion
-				</a>
-					<ul class="collapse list-unstyled" id="programacionSubmenu">
-						<li><a href="#">Registrar Programacion</a></li>
-						<li><a href="#">Programaciones</a></li>
-
-					</ul></li>
-
 
 				<li><a href="#partidoSubmenu" data-toggle="collapse"
 					aria-expanded="false"> <i class="glyphicon glyphicon-duplicate"></i>
@@ -111,7 +101,13 @@
 						<li><a href="views/ListaPartidos.jsp">Partidos</a></li>
 
 					</ul></li>
-
+                 <li> <a href="#programacionSubmenu" data-toggle="collapse" aria-expanded="false">
+						<i class="glyphicon glyphicon-duplicate"></i> Reportes
+				</a>
+					<ul class="collapse list-unstyled" id="programacionSubmenu">
+						<li><a href="views/Reportes.jsp">Que reporrte deseas ?</a></li>
+						
+					</ul></li>
 			</ul>
 
 		</nav>
