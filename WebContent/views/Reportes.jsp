@@ -4,14 +4,14 @@
 	<div class="col-xs-12 col-sm-8 " id="border" >
 
 		
-		<form action="../ReportesServlet" method="get" >
+		<form action="../ReportesServlet" method="get" target="_blank">
 		<h4>Delegaciones por deporte</h4>
 			<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 			<input type="hidden" name="accion" value="1">
 			<div class="form-group col-xs-12 col-sm-9">
 				<jsp:useBean id="dDao" class="modelo.DeporteDao" scope="request"></jsp:useBean>
 				<select class="form-control" id="deporte" name="deporte" >
-					<option value="">Seleccione deporte</option>
+					<option value="">Todos</option>
 					<c:forEach var="equipo" items="${dDao.list()}">
 						<option value="<c:out value="${equipo.id}"/>"><c:out
 								value="${equipo.nombre}" /></option>
@@ -22,13 +22,13 @@
 				<button type="submit" class="btn btn-success" id="button">Ver</button>
 			</div>
 		</form>
-		<form action="../ReportesServlet" method="get" >
+		<form action="../ReportesServlet" method="get" target="_blank">
 		<h4>Funcionarios de equipo</h4>
 			<input type="hidden" name="accion" value="2">
 			<div class="form-group col-xs-12 col-sm-9">
 				<jsp:useBean id="eDao" class="modelo.EquipoDao" scope="request"></jsp:useBean>
 				<select class="form-control" id="equipo" name="equipo" >
-					<option value="">Seleccione equipo</option>
+					<option value="">Todos</option>
 					<c:forEach var="equipo" items="${eDao.list()}">
 						<option value="<c:out value="${equipo.id}"/>"><c:out
 								value="${equipo.nombre}" /></option>
@@ -39,7 +39,7 @@
 				<button type="submit" class="btn btn-success" id="button">Ver</button>
 			</div>
 		</form>
-		<form action="../ReportesServlet" method="get" >
+		<form action="../ReportesServlet" method="get" target="_blank">
 		<h4>Partidos/Fecha</h4>
 			<input type="hidden" name="accion" value="3">
 			<div class="form-group col-xs-12 col-sm-9">
@@ -50,9 +50,9 @@
 				<button type="submit" class="btn btn-success" id="button">Ver</button>
 			</div>
 		</form>
-		<form action="../ReportesServlet" method="get" >
+		<form action="../ReportesServlet" method="get"  target="_blank">
 		<h4>Delegaciones</h4>
-			
+			<input type="hidden" name="accion" value="4">
 			<div class="form-group col-xs-12 col-sm-9">
 			<label for="fecha">Inscritas </label>
 			</div>

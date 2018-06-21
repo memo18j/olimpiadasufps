@@ -33,6 +33,13 @@
     </plugins>
   </build>
   <dependencies>
+  <!-- https://mvnrepository.com/artifact/net.sf.jasperreports/jasperreports -->
+<dependency>
+    <groupId>net.sf.jasperreports</groupId>
+    <artifactId>jasperreports</artifactId>
+    <version>5.0.1</version>
+</dependency>
+  
 	<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 	<dependency>
 	    <groupId>mysql</groupId>
