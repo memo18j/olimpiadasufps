@@ -4,7 +4,11 @@ package controlador;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.sql.Connection;
+import java.util.Date;
 import java.sql.DriverManager;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -234,6 +238,56 @@ public class ReportesServlet extends HttpServlet {
 			}
 		}
 		if(item==3) {
+			
+			Connection conn=null;
+	        try {
+	        	Class.forName("com.mysql.jdbc.Driver"); 
+	        	conn =(Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/OlimpiadasUfps", "root", "");
+	if(conn==null) {
+		System.out.println("Coneecion vacia");
+	}else {
+		System.out.println("1111111111111111111");
+	}
+
+	        } catch (Exception ex) {
+	        	ex.printStackTrace();
+	        	System.out.println("no conecte 2");
+	        } 
+			/*******************************/
+			try {
+				String deporte=request.getParameter("fecha");
+				
+				
+				JasperReport jasperReport=null;
+				JasperDesign jasperDesing=null;
+				Map parameters=new HashMap();
+				
+				
+				
+				
+				parameters.put("imagen", imagen);
+				parameters.put("fecha", deporte);
+				
+				//System.out.println(date+"datoooos");
+				
+				  
+				String path=getServletContext().getRealPath("/WEB-INF/");
+			jasperDesing=JRXmlLoader.load(path+"/Partidos.jrxml");
+			jasperReport=JasperCompileManager.compileReport(jasperDesing);
+			byte[] byteStream=JasperRunManager.runReportToPdf(jasperReport, parameters,(java.sql.Connection) conn);
+			OutputStream outStream =response.getOutputStream();
+			response.setContentType("application/pdf");
+			response.setContentLength(byteStream.length);
+			//response.addHeader("Content-disposition", "attachment; filename=report.pdf");
+			outStream.write(byteStream,0,byteStream.length);
+			
+			
+			
+			}catch(Exception e) {
+			e.printStackTrace();
+			}
+
+			
 			
 		}
 		
