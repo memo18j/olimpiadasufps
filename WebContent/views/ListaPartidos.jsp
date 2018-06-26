@@ -41,10 +41,7 @@
 						</c:forEach>
 					</tbody>
 				</table>
-				<div class="form-group col-xs-12 col-sm-12">
-					<button type="submit" class="btn btn-success" id="button"
-						href="../views/registrarDelegacion.jsp">Nuevo Equipo</button>
-				</div>
+			
 	</div>
 	<div class="col-xs-12 col-sm-1"></div>
 </div>

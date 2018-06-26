@@ -85,6 +85,7 @@ public class ReportesServlet extends HttpServlet {
 			
 				  
 				String path=getServletContext().getRealPath("/WEB-INF/");
+				
 			jasperDesing=JRXmlLoader.load(path+"/DelegacionesDeporte.jrxml");
 			jasperReport=JasperCompileManager.compileReport(jasperDesing);
 			byte[] byteStream=JasperRunManager.runReportToPdf(jasperReport, parameters,(java.sql.Connection) conn);
