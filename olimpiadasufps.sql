@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-06-2018 a las 03:21:21
--- Versión del servidor: 10.1.28-MariaDB
--- Versión de PHP: 7.1.10
+-- Tiempo de generación: 27-06-2018 a las 21:18:44
+-- Versión del servidor: 10.1.21-MariaDB
+-- Versión de PHP: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `olimpiadasufps`
+-- Base de datos: `OlimpiadasUfps`
 --
 
 -- --------------------------------------------------------
@@ -41,7 +39,11 @@ INSERT INTO `deporte` (`id`, `nombre`) VALUES
 (1, 'tejo'),
 (2, 'futbol'),
 (3, 'bolas criollas'),
-(4, 'rana');
+(4, 'rana'),
+(5, 'Futbol sala'),
+(6, 'Tennis de mesa'),
+(7, 'Ajedrez'),
+(8, 'Baloncesto');
 
 -- --------------------------------------------------------
 
@@ -61,9 +63,9 @@ CREATE TABLE `deportefuncionario` (
 --
 
 INSERT INTO `deportefuncionario` (`id`, `iddelegacion`, `iddeporte`, `idfuncionario`) VALUES
-(1, 9, 1, 1),
-(2, 6, 2, 2),
-(4, 8, 4, 1);
+(5, 10, 5, 3),
+(6, 10, 5, 4),
+(7, 10, 5, 5);
 
 -- --------------------------------------------------------
 
@@ -83,11 +85,14 @@ CREATE TABLE `equipo` (
 --
 
 INSERT INTO `equipo` (`id`, `nombre`, `delegado`, `telefono`) VALUES
-(5, 'pepe', 'memo', '547587'),
-(6, 'memo', 'jajajja', '2435354'),
-(7, 'pepepeepepeasaas', 'sdsdsdsd', '55475788'),
-(8, 'dsasd', 'sasd', 'sadas'),
-(9, 'U.E. JUAN MANUEL CAJIGAL', 'albeiro hernandez', '3102171787');
+(10, 'Ingenieria De sistemas', 'Juan Loza', '3124578056'),
+(11, 'Ingenieria industrial', 'Pedro Ramire', '3124567801'),
+(12, 'Departamento De Sistemas', 'Daniel Caballero', '3124561232'),
+(13, 'Contaduria', 'Carlos Ramirez', '3124531234'),
+(14, 'Ingenieria de minas', 'Camilo Perez', '3112341223'),
+(15, 'Enfermeria', 'Maria Martinez', '3189821724'),
+(16, 'Trabajo Social', 'Pedro Garcia', '2123456098'),
+(17, 'Ingenieria Electronica', 'David Guetta', '3104821234');
 
 -- --------------------------------------------------------
 
@@ -105,7 +110,11 @@ CREATE TABLE `escenario` (
 --
 
 INSERT INTO `escenario` (`id`, `nombre`) VALUES
-(1, 'general santander');
+(1, 'general santander'),
+(2, 'Coliseo Ufps'),
+(3, 'Cancha Alterna'),
+(4, 'Cancha bolas criollas'),
+(5, 'Coliseo 2');
 
 -- --------------------------------------------------------
 
@@ -124,8 +133,38 @@ CREATE TABLE `funcionario` (
 --
 
 INSERT INTO `funcionario` (`id`, `idequipo`, `nombre`) VALUES
-(1, 9, 'gabriel divinas apuestas'),
-(2, 9, 'maria');
+(3, 10, 'Cristian Arevalo'),
+(4, 10, 'Dairo Ramirez'),
+(5, 10, 'Guillermo Parada'),
+(6, 10, 'Daniel Sanchez'),
+(7, 10, 'Juliana Ortega'),
+(8, 10, 'Sergio Rodriguez'),
+(9, 11, 'Juan perez'),
+(10, 11, 'Carlos Anchico'),
+(11, 11, 'Pedro Ramiriqui'),
+(12, 11, 'Maria Martinez'),
+(13, 11, 'Juan de Arco'),
+(14, 12, 'Daniel Caballero'),
+(15, 12, 'Daniel Sanchez '),
+(16, 12, 'Carlos Goycochea'),
+(17, 12, 'Carlos Sanchez'),
+(18, 12, 'Yerry Mina'),
+(19, 13, 'Jose pekerman'),
+(20, 13, 'Mohamed Salah'),
+(21, 13, 'Franco Armani'),
+(22, 13, 'James Rodriguez'),
+(23, 13, 'Juan Quintero'),
+(24, 14, 'Shakiri'),
+(25, 14, 'Shaka'),
+(26, 14, 'Uribe'),
+(27, 14, 'Wilmar Barrios'),
+(28, 15, 'Katherine Ibarguen'),
+(29, 15, 'Mariana Pajon'),
+(30, 16, 'Julian Messi'),
+(31, 16, 'Daniel Romario'),
+(32, 17, 'Juan Cañizares'),
+(33, 17, 'Marcelo Gallardo'),
+(34, 17, 'Gareca');
 
 -- --------------------------------------------------------
 
@@ -145,7 +184,19 @@ CREATE TABLE `inscripcion` (
 --
 
 INSERT INTO `inscripcion` (`id`, `idequipo`, `iddeporte`, `grupo`) VALUES
-(1, 9, 2, 'A');
+(4, 10, 5, 'A'),
+(5, 11, 5, 'A'),
+(6, 12, 5, 'A'),
+(7, 13, 5, 'A'),
+(8, 17, 5, 'B'),
+(9, 16, 5, 'B'),
+(10, 15, 5, 'B'),
+(11, 14, 5, 'B'),
+(12, 10, 1, 'A'),
+(13, 10, 1, 'A'),
+(14, 12, 1, 'A'),
+(15, 17, 4, 'A'),
+(16, 16, 4, 'A');
 
 -- --------------------------------------------------------
 
@@ -170,8 +221,8 @@ CREATE TABLE `partidoequipo` (
 --
 
 INSERT INTO `partidoequipo` (`id`, `idequipo`, `idequipob`, `marcadorA`, `marcadorB`, `descripcion`, `fecha`, `escenario`, `fase`) VALUES
-(1, 5, 6, 2, 1, 'ola k ase', '2018-06-15', 1, 'Grupos'),
-(2, 9, 8, 1, 1, 'gjhkg', '2018-06-16', 1, 'Grupos');
+(4, 10, 11, 2, 1, 'Partido Futbol sala', '2018-06-25', 2, 'Grupos'),
+(5, 10, 12, 3, 3, '', '2018-06-25', 2, 'Grupos');
 
 -- --------------------------------------------------------
 
@@ -261,44 +312,37 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `deporte`
 --
 ALTER TABLE `deporte`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT de la tabla `deportefuncionario`
 --
 ALTER TABLE `deportefuncionario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT de la tabla `equipo`
 --
 ALTER TABLE `equipo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT de la tabla `escenario`
 --
 ALTER TABLE `escenario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT de la tabla `funcionario`
 --
 ALTER TABLE `funcionario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 --
 -- AUTO_INCREMENT de la tabla `inscripcion`
 --
 ALTER TABLE `inscripcion`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT de la tabla `partidoequipo`
 --
 ALTER TABLE `partidoequipo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- Restricciones para tablas volcadas
 --
@@ -331,7 +375,6 @@ ALTER TABLE `partidoequipo`
   ADD CONSTRAINT `partidoequipo_ibfk_2` FOREIGN KEY (`idequipo`) REFERENCES `equipo` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `partidoequipo_ibfk_3` FOREIGN KEY (`escenario`) REFERENCES `escenario` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `partidoequipo_ibfk_4` FOREIGN KEY (`idequipob`) REFERENCES `equipo` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
